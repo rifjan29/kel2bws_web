@@ -1,1 +1,1 @@
-# kel2bws_web
+# Workshop Sistem Informasi Berbasis Web
