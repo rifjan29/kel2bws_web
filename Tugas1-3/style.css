@@ -8,40 +8,7 @@
 }
 main{
     padding: 20px;
-    overflow: auto;
 }
-#content {
-    width: 75%;
-    float: left;
-}
-aside{
-    float: right;
-    width: 25%;
-    padding-left: 10px;
-}
-@media screen and (max-width: 768px){
-    header {
-        width: auto;
-    }
-}
-@media screen and (max-width: 320px){
-    header {
-        width: auto;
-    }
-}
-@media screen and (max-width : 768px){
-    #content{
-        width: 100%;
-    }
-    aside{
-        width: 100%;
-    }
-}
-@media screen and (max-width: 768px) {
-    .column {
-      width: 100%;
-    }
-  }
 /* tampilan header */
 blockquote::before,
 blockquote::after{
@@ -56,7 +23,8 @@ blockquote{
 }
 .header-kota{
     font-size: 15px;
-    padding: 60px;
+    padding-top:20px;
+    
     background-color: #03ABA4;
     text-align: center;
     color: white;
@@ -72,7 +40,6 @@ nav{
 nav li{
     display: inline-block;
     list-style-type: none;
-    margin-right: 25px;
 }
 nav a {
     color: white;
@@ -94,7 +61,6 @@ header{
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
-    display: block;
 }
 .caption-text{
     padding: 15px 20px 15px 0;
@@ -127,75 +93,6 @@ strong{
     color: #494e52;
     font-size: 12px;
 }
-#foto-padat{
-    display: block;
-    width: 50%;
-    max-width:400px;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: cover;
-    object-position: center;
-    
-}
-/* coloumn wisata */
-.column {
-    float: left;
-    width: 33.3%; 
-    padding: 0 10px;
-    margin-bottom: 50px;
-  }  
-.row {margin: 0 -5px;}
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-.card-style {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding-bottom: 20px;
-    display: block;
-  } 
-.card-style:hover{
-    border-bottom: 2px solid #03ABA4;
-}
-.container-wisata p{
-    text-align: justify;
-    font-size: 12px;
-    padding: 10px;
-}
-h5{ text-align: center; color: #03ABA4; font-size: 15px; margin-top: 10px;}
-/* aside website */
-.profile{
-    text-align: center;  
-    
-}
-.profile figcaption{
-    margin-bottom: 10px;
-    font-size: 12px ;
-}
-.profile h2, p {
-    margin-bottom: 5px;
-}
-.profile h2{
-    color:  #03ABA4;
-}
-.profile p {
-    font-size: 11px;
-}
-.profile table {
-    margin-left:auto; 
-    margin-right:auto;
-}
-th, td{
-    text-align: left;
-    padding: 10px;
-    font-size: 12px;
-}
-.profile:hover{
-    border-bottom: 2px solid #03ABA4;
-}
-
 /* tampilan footer */
 footer{
     position: relative;
