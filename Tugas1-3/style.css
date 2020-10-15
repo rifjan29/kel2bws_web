@@ -1,0 +1,210 @@
+/* //import font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+/* tampilan body */
+*{
+ padding: 0;
+ margin: 0;
+}
+main{
+    padding: 20px;
+    overflow: auto;
+}
+#content {
+    width: 75%;
+    float: left;
+}
+aside{
+    float: right;
+    width: 25%;
+    padding-left: 10px;
+}
+@media screen and (max-width: 768px){
+    header {
+        width: auto;
+    }
+}
+@media screen and (max-width: 320px){
+    header {
+        width: auto;
+    }
+}
+@media screen and (max-width : 768px){
+    #content{
+        width: 100%;
+    }
+    aside{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .column {
+      width: 100%;
+    }
+  }
+/* tampilan header */
+blockquote::before,
+blockquote::after{
+    content: '"';
+    font-weight: bold;
+    font-size: 24px;
+    font-style: italic;
+}
+blockquote{
+    text-align: center;
+    font-size: 14px;
+}
+.header-kota{
+    font-size: 15px;
+    padding: 60px;
+    background-color: #03ABA4;
+    text-align: center;
+    color: white;
+}
+
+/* tampilan navbar */
+nav{
+    background-color: #027974;
+    text-align: center;
+    padding: 10px;
+    width: auto;
+}
+nav li{
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 25px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 11px;
+}
+nav a:hover{
+    background-color: #03ABA4;
+}
+header{
+    width: 100%;
+}
+
+/* tampilan content web */
+.content-prob{  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    display: block;
+}
+.caption-text{
+    padding: 15px 20px 15px 0;
+    font-size: 12px;
+    font-weight: bold; 
+    color:  #03ABA4 ;
+
+}
+.card{
+    background-color: #03ABA4;  
+    padding: 10px;
+    color: white;
+}
+.image{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+.text-content{
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 200%;
+    color: #898989;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+strong{
+    padding-bottom: 10px;
+    color: #494e52;
+    font-size: 12px;
+}
+#foto-padat{
+    display: block;
+    width: 50%;
+    max-width:400px;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    object-position: center;
+    
+}
+/* coloumn wisata */
+.column {
+    float: left;
+    width: 33.3%; 
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }  
+.row {margin: 0 -5px;}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.card-style {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding-bottom: 20px;
+    display: block;
+  } 
+.card-style:hover{
+    border-bottom: 2px solid #03ABA4;
+}
+.container-wisata p{
+    text-align: justify;
+    font-size: 12px;
+    padding: 10px;
+}
+h5{ text-align: center; color: #03ABA4; font-size: 15px; margin-top: 10px;}
+/* aside website */
+.profile{
+    text-align: center;  
+    
+}
+.profile figcaption{
+    margin-bottom: 10px;
+    font-size: 12px ;
+}
+.profile h2, p {
+    margin-bottom: 5px;
+}
+.profile h2{
+    color:  #03ABA4;
+}
+.profile p {
+    font-size: 11px;
+}
+.profile table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+th, td{
+    text-align: left;
+    padding: 10px;
+    font-size: 12px;
+}
+.profile:hover{
+    border-bottom: 2px solid #03ABA4;
+}
+
+/* tampilan footer */
+footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
