@@ -260,13 +260,15 @@
                 function diskon($harga){
                     $diskon1 = 20;
                     $diskon2 = 50;
-
-                    if ($harga <= 50000) {
+                    
+                    if ($harga <=50000) {
                         $harga = ($diskon1/100) * $harga;                       
                         echo "Anda Mendapatkan Diskon 20% dengan Harga anda = ".$harga;
-                    }elseif ($harga >=60000) {
+                    }elseif ($harga >=60000 && $harga <=85000) {
                         $harga1 = ($diskon2/100) * $harga;                       
-                        echo "Anda Mendapatkan Diskon 20% dengan Harga anda = ".$harga1;
+                        echo "Anda Mendapatkan Diskon 50% dengan Harga anda = ".$harga1;
+                    }else{
+                      echo "Anda tidak mendapatkan diskon Harga anda =".$harga;
                     }
                 }
                 echo "Nama Barang Anda adalah : $name"."<br>";

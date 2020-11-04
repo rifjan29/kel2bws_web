@@ -35,8 +35,10 @@
   <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Form:</h6>
-      <a class="collapse-item" href="login.html">Registration</a>
-      <a class="collapse-item" href="login.html">Contact Us</a>
+      <a class="collapse-item" href="registration.php">Registration</a>
+      <a class="collapse-item" href="contact.php">Contact Us</a>
+      <a class="collapse-item" href="tantangan.php">Diskon</a>
+      <a class="collapse-item" href="login.php">Login</a>
    
   </div>
 </li>
