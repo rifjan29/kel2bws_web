@@ -25,7 +25,8 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php include "./sidebar.php" ?>
+  <?php include "./sidebar.php" ?>
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -215,153 +216,70 @@
         </nav>
         <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">
-                    Registration
-                </h1>
-            </div>
+      <!-- Begin page content -->
+      <div class="container-fluid">
+        
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h class="h3 mb-0 text-gray-800">DISKON</h1>
+        </div>
 
-            <div class="col-lg-12">
-            <!-- Dropdown Card Example -->
+        <!-- Content Row -->
+        <div class="row">
+
+          <!-- Area chart -->
+          <div class="col-xl-12 col-lg-7">
             <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Registration</h6>
+              <!-- Card Header Dropdown -->
+              <div class="card-header py-3 d-flex flex-row align-item-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Cek Diskon</h6>
                 <div class="dropdown no-arrow">
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a href="#" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
                     <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                    <div class="dropdown-header">Dropdown Header:</div>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                  </a>
                 </div>
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-            <form class="user">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Nama Anda" required >
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Username" required >
-                </div>         
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Email Anda" required>
-                </div> 
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                <input class="form-check-input ml-2" type="radio" name="jenis" id="jenis" value="laki" >
-                    <label class="form-check-label ml-4" for="exampleRadios1">
-                        Laki-Laki
-                    </label>    
-                <input class="form-check-input ml-2" type="radio" name="jenis" id="jenis" value="perempuan" >
-                    <label class="form-check-label ml-4" for="exampleRadios1">
-                        Perempuan
-                    </label>                
-                </div>
-                <div class="form-group">
-                <select class="form-control form-rounded " id="agama" name="agama" >
-                                        <option value="Islam">Islam</option>
-                                        <option value="2">Kristen</option>
-                                        <option value="3">Hindu</option>
-                                       
-                                      </select>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control form-rounded" id="biografi" name="biografi" rows="7" placeholder="Biografi"></textarea>
-               </div> 
-                <button type="submit" class="btn btn-success" name="submit">Tambah</button>
-                <hr>
-                <?php
-                    $name = @$_GET['name'];
-                    $username = @$_GET['username'];
-                    $email = @$_GET['email'];
-                    $jenis_kelamin = @$_GET['jenis'];
-                    $agama = @$_GET['agama'];
-                    $biografi = @$_GET['biografi'];
+              </div>
 
+              <div class="card-body">  <div id="main-wrapper">
+        <div id="main">
+            <h1>Hitung Diskon dengan PHP</h1>
+            <br />
+            <form method="POST" action="">                
+                <table>
+                <tr>
+                        <td>Harga</td>
+                        <td><input type="text" name="bil1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Diskon (%)</td>
+                        <td><input type="text" name="bil2" required/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <label><br><br>
+                            <input type="submit" name="Submit" value="Hitung" id="prn">
+                        </label>
+                        <label>
+                            <input type="reset" name="reset" value="Batal" id="prn">
+                        </label>
+                        <label>
+                             <a href="./">Hapus</a>
+                        </label>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+            <div id="hasil">
+                <?php error_reporting (E_ALL ^ E_NOTICE);
+                    $harga    =$_POST['bil1'];
+                    $diskon    =$_POST['bil2'];
                     
-                    if ($name) {
-                      echo "<br><br><strong>Nama : </strong> {$name} <br>";
-                    }
-                    if ($username) {
-                        echo "<br><br><strong>Username : </strong> {$username} <br>";
-                    }
-                    if ($email) {
-                        echo "<br><br><strong>Email : </strong> {$email} <br>";
-                    }
-                    if ($jenis_kelamin) {
-                        echo "<br><br><strong>Jenis Kelamin : </strong> {$jenis_kelamin} <br>";
-                    }
-                    if ($agama) {
-                        echo "<br><br><strong>Agama : </strong> {$agama} <br>";
-                    }
-                    if ($biografi) {
-                        echo "<br><br><strong>Biografi : </strong> {$biografi} <br>";
-                    }
+                    $nilai=($diskon/100)*$harga;
+                    echo 'Nominal diskon ';echo $diskon;echo'% dari '; echo number_format($harga,2,",","."); echo' adalah sebesar <u>';echo number_format($nilai,2,",",".");echo'</u>';
                 ?>
-              </form>
             </div>
-            </div>
-
-           
-
-            </div>            
-         
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
