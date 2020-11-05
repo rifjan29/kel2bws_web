@@ -288,10 +288,6 @@
                     $agama = @$_GET['agama'];
                     $biografi = @$_GET['biografi'];
 
-                    
-                    if ($name) {
-                      echo "<br><br><strong>Nama : </strong> {$name} <br>";
-                    }
                     if ($username) {
                         echo "<br><br><strong>Username : </strong> {$username} <br>";
                     }
