@@ -17,6 +17,7 @@
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
+          <a class="collapse-item" href="login.php">Login</a>
       </li>
 
       <!-- Divider -->
@@ -38,6 +39,9 @@
             <h6 class="collapse-header">Form:</h6>
             <a class="collapse-item" href="registration.php">Registration</a>
             <a class="collapse-item" href="contact.php">Contact Us</a>
+            <a class="collapse-item" href="diskon.php">Diskon</a>
+            <a class="collapse-item" href="login.php">Login</a>
+           
           </div>
         </div>
       </li>
