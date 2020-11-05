@@ -243,77 +243,29 @@
               </a>
             </div>
             </div>
-            <!-- Card Body -->
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Nama Anda" required>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="user" name="user" placeholder="Username Anda" require>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Email Anda" require>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-user" id="pass" name="Pass" placeholder="Password Anda" require>
-                </div>
-                <div class="form-group">
-                <div class="form-group">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="laki" value="Laki-laki">
-                            <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="perempuan" value="Perempuan">
-                            <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                  <select name="agama" class="form-control form-control-user" id="agama">
-                  <option value="Islam">Islam</option>
-                  <option value="Kristen">Kristen</option>
-                  <option value="Hindhu">Hindhu</option>
-                  <option value="Buddha">Buddha</option>
-                  <option value="Konghuchu">Konghuchu</option></select>
-                </div>
-                <div class="form-group">
-                   <input type="text" class="form-control form-control-user" id="bio" name="bio" placeholder="Biografi" required>   
-                </div>
-                <button type="submit" class="btn btn-success" name="submit">Tambah</button>
-                <?php
-                $name = @$_GET['name'];
-                $user = @$_GET['user'];
-                $email = @$_GET['email'];
-                $pass = @$_GET['pass'];
-                $gender = @$_GET['gender'];
-                $agama = @$_GET['agama'];
-                $bio = @$_GET['bio'];
+            
 
-                if ($name) {
-                  echo "<br><br><strong>Nama:</strong> {$name} <br>";
-                }
-                if ($user) {
-                  echo "<br><br><strong>Username:</strong> {$user} <br>";
-                }
-                if ($email) {
-                  echo "<br><br><strong>Email:</strong> {$email} <br>";
-                }
-                if ($pass) {
-                  echo "<br><br><strong>Email:</strong> {$pass} <br>";
-                }
-                if ($gender) {
-                    echo "<br><br><strong>Gender:</strong> {$gender} <br>";
-                }
-                if ($agama) {
-                    echo "<br><br><strong>Agama:</strong> {$agama} <br>";
-                }
-                if ($bio) {
-                    echo "<br><br><strong>Biografi:</strong> {$bio} <br>";  
-                }
-                ?>
-              </form>
+
+         <!-- Card Body -->
+         <div class="card-body">
+         <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Harga" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="subject" name="subject" placeholder="Diskon(%)" required>
+                  </div>
+                  <button type="submit" class="btn btn-success" name="submit">Tambah</button>
+                  <?php 
+                  error_reporting (E_ALL ^ E_NOTICE);
+                  $harga =$_GET['name'];
+                  $diskon =$_GET['subject'];
+                  function diskon($diskon,$harga){
+                    return $harga-($diskon/100)*$harga;
+                  }
+                  echo "Harga : " .diskon($diskon,$harga);
+                  ?>
+                </form>
             </div>
           </div>
          </div>
