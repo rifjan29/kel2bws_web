@@ -6,8 +6,8 @@
             'level' => "1"
         ],
         [
-            'username' => "polije",
-            'password' => "321",
+            'username' => "destira",
+            'password' => "0405",
             'level' => "2"
         ]
     ];
@@ -16,7 +16,7 @@
                 session_start();
                 $_SESSION['user'] = $_POST['user'];
                 $_SESSION['level'] = ($data['level']=="1")?'Admin':'User Biasa';
-                header("Location: dashboard.php");
+                header("Location: index.php");
                 die();
         }else {
             echo "Username atau password salah";
