@@ -281,7 +281,7 @@
                         if (isset($_GET['nim'])) {
                             $nim=$_GET["nim"];
 
-                            $sql="select * from mahasiswa where nim=$nim";
+                            $sql="select * from mahasiswa where nim='$nim'";
                             $hasil= mysqli_query($koneksi,$sql);
                             $data = mysqli_fetch_assoc($hasil);
                         }
