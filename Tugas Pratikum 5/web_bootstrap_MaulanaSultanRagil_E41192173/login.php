@@ -17,7 +17,19 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+<?php
+if (isset($_GET['pesan'])){
+  $pesan = $_GET['pesan'];
+  if ($pesan =="gagal") {
+    ?>
+    <div class="alert alert-danger">
+      <strong>Danger!</strong> Anda Gagal Login. Coba cek email atau password anda.
+    </div>
 
+    <?php
+  }
+}
+?>
 </head>
 
 <body class="bg-gradient-primary">
@@ -33,18 +45,19 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block bg-login-image" ></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
+
                   <form class="user" method="POST" action="login_act.php">
                     <div class="form-group">
-                      <input type="text" name="user" class="form-control form-control-user" id="inputUsername" aria-describedby="emailHelp" placeholder="Username">
+                      <input type="user" name="email" class="form-control form-control-user" id="inputUsername" aria-describedby="emailHelp" placeholder="Username">
                     </div>
                     <div class="form-group">
-                      <input type="password" name="pass" class="form-control form-control-user" id="inputPassword" placeholder="Password">
+                      <input type="password" name="password" class="form-control form-control-user" id="inputPassword" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">

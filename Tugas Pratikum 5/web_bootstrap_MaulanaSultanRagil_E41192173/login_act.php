@@ -1,27 +1,17 @@
 <?php 
-  $login = [
-    [
-        'username' => "sultanragil",
-        'password' => "admin",
-        'level' => "Admin"
-    ],
-    [
-        'username' => "maulana",
-        'password' => 'user',
-        'level' => "2"
-    ]
-    ];
-    foreach($login as $data){
-      if($_POST['user'] == $data['username'] && $_POST['pass'] == $data['password']){
-        session_start();
-        $_SESSION['user'] = $_POST['user'];
-        $_SESSION['level'] = ($data['level']=="1")?'Admin':'User';
-        header("Location: index.php");  
-      }
-      else{
-        echo "Username atau Password";
-        die();
-      }  
-    }
-    
-?>
+include "koneksi.php";
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$query = mysqli_query($koneksi,"SELECT * FROM akun WHERE user='$email' AND pass='$password'");
+$cek = mysqli_num_rows($query);
+
+if($cek > 0){
+    session_start();
+    $_SESSION['email'] = $email;
+    $_SESSION['status'] = "login";
+    header("location:index.php?pesan=berhasil");
+} else {
+    header("location:login.php?pesan=gagal");
+}
