@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,26 +40,22 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <?php
-                    if (isset($_GET['pesan'])) {
-                        $pesan = $_GET['pesan'];
-                        if ($pesan == "gagal") {
-                            ?>
-                                <div class="alert alert-danger">
-                                    <strong>Kesalahan !</strong>Anda gagal login. coba cek email atau password Anda.
-                                </div>
-                            <?php
-                        }
-                    }else{
+                  <div style="color: red;margin-bottom: 15px;">
+                    <?php
+                    // Cek apakah terdapat cookie dengan nama message
+                    if(isset($_COOKIE["message"])){ // Jika ada
+                    echo $_COOKIE["message"]; // Tampilkan pesannya
+                    }
+                    ?>
+                </div>
 
-                    }    
-                  ?>
-                  <form class="user" method="post" action="config/login-process.php">
+
+                  <form class="user" method="post" action="config/login-process.php" onSubmit="return validasi()">
                     <div class="form-group">
-                      <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    <input type="text" class="form-control form-control-user" id="user" placeholder="Username" name="user">
                     </div>
                     <div class="form-group">
-                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -66,11 +63,11 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-user btn-block" name="submit">Login</button>
+                    <button type="submit" class="btn btn-primary btn-user btn-block" name="login">Login</button>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.php">Create an Account!</a>
                   </div>
                 </div>
               </div>
@@ -93,7 +90,18 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+     <script> 
+       function validasi() {
+        var username = document.getElementById("user").value;
+        var password = document.getElementById("password").value;    
+        if (username != "" && password!="") {
+        return true;
+        }else{
+        alert('Username dan Password Wajib Diisi :V');
+        return false;
+        }
+        }
+ </script>
 </body>
 
 </html>
