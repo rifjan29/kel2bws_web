@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -299,7 +307,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                    Rifjan Jundila
+                <?php echo $_SESSION['username']; ?>
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -339,19 +347,7 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
             
           </div>
-          <?php 
-            
-            if (isset($_GET['pesan'])) {
-                $pesan = $_GET['pesan'];
-                if ($pesan == "berhasil") {
-                    ?>
-                <div class="alert alert-success">
-                    <strong>Berhasil</strong> Anda sudah berhasil login.
-                </div>
-                    <?php
-                }
-            }
-          ?>
+        
 
           <!-- Content Row -->
           <div class="row">
@@ -703,7 +699,9 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="">
 
+  </script>
 </body>
 
 </html>

@@ -1,6 +1,8 @@
 <?php 
-    $db_host = "localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "users";
+
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+$dbname = 'users'; //sesuai nama databasemu//
+$connect = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('koneksi gagal');
 ?>
