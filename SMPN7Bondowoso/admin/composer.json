@@ -1,0 +1,13 @@
+{
+    "name": "janco/backend",
+    "authors": [
+        {
+            "name": "rifjan29",
+            "email": "rjndla@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.2",
+        "symfony/dotenv": "^5.2"
+    }
+}
