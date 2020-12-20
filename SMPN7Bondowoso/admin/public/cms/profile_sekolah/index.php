@@ -21,6 +21,8 @@
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
+                    <th>No</th>
+                    <th>ID</th>
                     <th>Logo</th>
                     <th>Makna Logo</th>
                     <th class="hidden-phone">Visi</th>
@@ -31,22 +33,31 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?php
+                  include "..\..\..\config\conn.php";
+                  $query_mysql = mysqli_query($db, "select * from profile");
+                  $list = 1;
+                  while ($profile = mysqli_fetch_array($query_mysql)){
+                ?>
                   <tr class="">
+                    <td class="hidden-phone"><?php echo $list++; ?></td>
+                    <td class="hidden-phone"><?php echo $profile['id']; ?></td>
                     <td>     
                         <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                         <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
+                         <img src='foto/".$profile['profile_logo']."' alt="" />
                         </div>
                     </td>
-                    <td>Merupakan salah satu sekolah adiwiyata</td>
-                    <td class="hidden-phone">Win 95+</td>
-                    <td class="center hidden-phone">4</td>
-                    <td class="center hidden-phone">X</td>
-                    <td>asaf</td>
+                    <td class="hidden-phone"><?php echo $profile['profile_title']; ?></td>
+                    <td class="hidden-phone"><?php echo $profile['profile_visi']; ?></td>
+                    <td class="center hidden-phone"><?php echo $profile['profile_misi']; ?></td>
+                    <td class="center hidden-phone"><?php echo $profile['profile_location']; ?></td>
+                    <td><?php echo $profile['profile_address']; ?></td>
                     <td>
                       <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-danger" href="drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
+                  <?php } ?>
                 </tbody>
               </table>
           </div>
