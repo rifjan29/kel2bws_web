@@ -20,7 +20,7 @@
           <div class="form-panel">
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" enctype="multipart/form-data" action="..\..\..\controller\home\cms\profile_sekolah\input_act.php">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" enctype="multipart/form-data" action="../../../controller/profile_sekolah/input_act.php">
                   <div class="form-group ">
                     <label for="title" class="control-label col-lg-2">Arti Logo <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">

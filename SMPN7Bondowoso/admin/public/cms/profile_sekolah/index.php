@@ -35,7 +35,7 @@
                 <tbody>
                 <?php
                   include "..\..\..\config\conn.php";
-                  $query_mysql = mysqli_query($db, "select * from profile");
+                  $query_mysql = mysqli_query($db, "SELECT * FROM profile");
                   $list = 1;
                   while ($profile = mysqli_fetch_array($query_mysql)){
                 ?>
@@ -44,17 +44,17 @@
                     <td class="hidden-phone"><?php echo $profile['id']; ?></td>
                     <td>     
                         <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                         <img src='foto/".$profile['profile_logo']."' alt="" />
+                         <img src='foto../img_uploaded/cms/profile_sekolah/".$profile['profile_logo']."' alt="" />
                         </div>
                     </td>
                     <td class="hidden-phone"><?php echo $profile['profile_title']; ?></td>
                     <td class="hidden-phone"><?php echo $profile['profile_visi']; ?></td>
                     <td class="center hidden-phone"><?php echo $profile['profile_misi']; ?></td>
                     <td class="center hidden-phone"><?php echo $profile['profile_location']; ?></td>
-                    <td><?php echo $profile['profile_address']; ?></td>
+                    <td class="center hidden-phone"><?php echo $profile['profile_address']; ?></td>
                     <td>
                       <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
                   <?php } ?>
