@@ -20,11 +20,11 @@
           <div class="form-panel">
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="">
                 <div class="form-group">
-                        <label for="gambar_banner" class="control-label col-md-2">Foto Thumbnail <strong>(Wajib)</strong></label> 
+                        <label for="foto_informasi" class="control-label col-md-2">Foto Thumbnail <strong>(Wajib)</strong></label> 
+                        <input type="file" name="foto_informasi" required="required" id="foto_informasi"/>
                     <div class="col-md-9 ">
-                        <input type="file" name="foto" required="required" id="gambar_banner"/>
                         <div class="gambar-banner">
                             <span class="label label-info">Catatan!</span>
                             <span>
@@ -34,9 +34,9 @@
                     </div>    
                   </div>
                   <div class="form-group ">
-                    <label for="title" class="control-label col-lg-2">Judul Informasi<strong> (Wajib)</strong></label>
+                    <label for="judul" class="control-label col-lg-2">Judul Informasi<strong> (Wajib)</strong></label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="title" name="title" minlength="2" type="text" required />
+                      <input class=" form-control" id="judul" name="judul_informasi" minlength="2" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
