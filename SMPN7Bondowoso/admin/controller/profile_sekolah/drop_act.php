@@ -1,11 +1,11 @@
 <?php
-    include "..\..\..\config\conn.php";
+    include "../../config/conn.php";
 
 
-    $profile = $_POST['id'];
-    mysqli_query($db,"DELETE FROM profile WHERE id='$profile'");
+    $d = $_GET['id'];
+    mysqli_query($db,"DELETE FROM profile WHERE id='$d'");
 
-    header("location:index.php");
+    header("location: ../../../../../../../kel2bws_web/SMPN7Bondowoso/admin/public/cms/profile_sekolah/index.php");
 
 
 

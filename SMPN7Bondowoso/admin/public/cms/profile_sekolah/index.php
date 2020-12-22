@@ -34,7 +34,7 @@
                 </thead>
                 <tbody>
                 <?php
-                  include "..\..\..\config\conn.php";
+                  include "../../../config/conn.php";
                   $query_mysql = mysqli_query($db, "SELECT * FROM profile");
                   $list = 1;
                   while ($profile = mysqli_fetch_array($query_mysql)){
@@ -43,8 +43,8 @@
                     <td class="hidden-phone"><?php echo $list++; ?></td>
                     <td class="hidden-phone"><?php echo $profile['id']; ?></td>
                     <td>     
-                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                         <img src='foto../img_uploaded/cms/profile_sekolah/".$profile['profile_logo']."' alt="" />
+                        <div class="" style="width: 200px; height: 150px;">
+                         <img src="../../../../../../kel2bws_web/SMPN7Bondowoso/admin/img_uploaded/cms/profile_sekolah/<?php echo $profile['profile_logo']; ?>" style="width: 200px; height: 200px;" alt="" />
                         </div>
                     </td>
                     <td class="hidden-phone"><?php echo $profile['profile_title']; ?></td>
@@ -53,8 +53,8 @@
                     <td class="center hidden-phone"><?php echo $profile['profile_location']; ?></td>
                     <td class="center hidden-phone"><?php echo $profile['profile_address']; ?></td>
                     <td>
-                      <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-warning" href="edit-data.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger" href="../../../controller/profile_sekolah/drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
                   <?php } ?>
