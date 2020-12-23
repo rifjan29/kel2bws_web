@@ -54,19 +54,6 @@
           [1, 'asc']
         ]
       });
-
-      $('#hidden-table-info tbody td img').live('click', function() {
-        var nTr = $(this).parents('tr')[0];
-        if (oTable.fnIsOpen(nTr)) {
-          /* This row is already open - close it */
-          this.src = "lib/advanced-datatable/media/images/details_open.png";
-          oTable.fnClose(nTr);
-        } else {
-          /* Open this row */
-          this.src = "lib/advanced-datatable/images/details_close.png";
-          oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
-        }
-      });
     });
   </script>
     <script type="text/javascript">
