@@ -115,7 +115,8 @@
                       </select>
                     </div>
                   </div>  
-                  <input name="id_news" hidden value="<?=$data['id'];?>"/>              
+                  <input name="id_news" hidden value="<?=$data['id'];?>"/> 
+                  <input name="gambar_lama" hidden value="<?=$data['news_picture'];?>"/>              
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <button class="btn btn-theme" type="submit">Simpan</button>

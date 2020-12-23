@@ -29,13 +29,6 @@
           }else{
          
           }
-          if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-            <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['success_message']; ?>.</div>
-          <?php
-            unset($_SESSION['success_message']);
-          }else{
-         
-          }
         ?>
         </div>
         <div class="row mt">

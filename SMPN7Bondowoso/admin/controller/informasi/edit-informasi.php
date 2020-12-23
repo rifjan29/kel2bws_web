@@ -9,6 +9,7 @@
     $kategori = $_POST['kategori_informasi'];
 
     $picture = $_FILES['foto']['name'];
+    $gambar = $_POST['gambar_lama'];
     $aid = $_POST['id'];
 
     $id = $_POST['id_news'];
@@ -24,6 +25,7 @@
         if (in_array($ekstensi,$ekstensi_diperbolehkan)==true) {
             if(move_uploaded_file($file_tmp,'../../img_uploaded/informasi/'.$name_picture)){
                 $query  = "UPDATE `news` SET `news_tittle` = '$title',`news_content` = '$content',`news_picture` = '$name_picture', `slug` = '$slug', `news_category` = '$kategori', news_date='$date' ,`aid` = '$aid' ";
+                unlink("../../img_uploaded/informasi/$gambar");
                 $query .= "WHERE `news`.`id` = '$id'";
                 $result = mysqli_query($db, $query) or die (mysqli_error($db));
     
