@@ -13,6 +13,7 @@
     <?php $title ="home";?> 
     <?php include "partials/sidebar.php"?>
     <?php include "partials/edit_profile.php"?>
+    <?php include "partials/reset-password.php"?>
     <!-- **********************************************************************************************************************************************************   
     <!--main content start-->
     <section id="main-content">
@@ -20,6 +21,15 @@
         <div class="row">
           <div class="col-lg-9 main-chart">
             <div class="row mt">
+            <?php
+              if (isset($_SESSION['gagal_masuk']) && !empty($_SESSION['gagal_masuk'])) { ?>
+                  <div class="alert alert-danger" style="margin-top: 10px;"><b>Peringatan!</b> <?=$_SESSION['gagal_masuk']; ?>.</div>
+              <?php
+               unset($_SESSION['gagal_masuk']);
+              }else{
+                                      
+              }
+              ?>
               <!-- SERVER STATUS PANELS -->
               <!-- Admin -->
               <div class="col-md-6 col-sm-6 mb">

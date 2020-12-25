@@ -10,11 +10,13 @@
       <?php $title = "gambar";?>
       <?php include "../../../partials/sidebar.php"?>
       <?php include "../../../partials/edit_profile.php"?>
+      <?php include "../../../partials/reset-password.php"?>
     <!-- endNavbar -->
     <section id="main-content">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>Foto Sarana Prasarana</h3>
         <p>digunakan untuk memanipulasi data pada halaman Sarana Prasarana</p>
+        
         <div class="row mt">
           <div class="col-lg-12">
           <div class="form-panel">

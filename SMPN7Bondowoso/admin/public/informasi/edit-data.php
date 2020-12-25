@@ -11,6 +11,7 @@
       <?php $title = "informasi";?>
       <?php include "../../partials/sidebar.php"?>
       <?php include "../../partials/edit_profile.php"?>
+      <?php include "../../partials/reset-password.php"?>
       <?php
             if (isset($_GET['id'])) {
                 $id = ($_GET["id"]);
@@ -54,28 +55,7 @@
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
                 <form class="cmxform form-horizontal style-form" id="commentForm" method="post" enctype="multipart/form-data" action="../../controller/informasi/edit-informasi.php">
-                
-                <div class="form-group">
-                        <label for="gambar_banner" class="control-label col-md-2">Foto Thumbnail <strong>(Wajib)</strong></label> 
-                        
-                    <div class="col-lg-10">
-                      <?php 
-                        $sql = mysqli_query($db, "SELECT id FROM `admin` WHERE 1");
-                        if ($sql->num_rows > 0) {
-                          // output data of each row
-                          while($row = $sql->fetch_assoc()) {
-                          ?>
-                            <input class=" form-control" id="title" name="id" minlength="2" type="text" required value="<?=$row["id"];?>" />
-                            
-                        <?php } ?>
-                        <?php
-                        } else {
-                          echo "0 results";
-                        }
-                      ?>
-                      
-                    </div>
-                  </div>
+                  <input  name="id" hidden value="<?=$id_admin;?>" />
                   <div class="form-group">
                         <label for="gambar_banner" class="control-label col-md-2">Foto Thumbnail <strong>(Wajib)</strong></label> 
                     <div class="col-md-9 ">

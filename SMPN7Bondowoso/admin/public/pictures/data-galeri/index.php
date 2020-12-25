@@ -10,10 +10,19 @@
   <?php $title = "gambar";?>
   <?php include "../../../partials/sidebar.php"?>
   <?php include "../../../partials/edit_profile.php"?>
+  <?php include "../../../partials/reset-password.php"?>
   <section id="main-content">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>Galeri Sekolah</h3>
-        <p>Foto sembarang Tentang Sekolah</p>
+        <p>Foto Tentang Kegiatan Sekolah Sekolah</p>
+        <?php 
+          if (isset($_SESSION['berhasil']) && !empty($_SESSION['berhasil'])) { ?>
+            <div class="alert alert-success"><b>Warning!</b> <?=$_SESSION['berhasil']; ?>.</div>
+          <?php
+            unset($_SESSION['berhasil']);
+          }else{
+          }
+        ?>
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">

@@ -9,6 +9,7 @@
   <?php include "../../../partials/topbar.php"?> 
   <?php $title = "cms";?>
   <?php include "../../../partials/sidebar.php"?>
+  <?php include "../../../partials/edit_profile.php"?>
   <section id="main-content">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>Data Pimpanan</h3>
@@ -16,7 +17,7 @@
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
-            <button type="button" class="btn btn-theme" style="margin-bottom: 10px;" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>Tambah Kepala Sekolah</button>
+            <button type="button"" class="btn btn-theme" style="margin-bottom: 10px;" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>Tambah Kepala Sekolah</button>
               <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -27,31 +28,31 @@
                     </div>
                     <div class="modal-body">
                       <!-- form GURU & KARYAWAN  -->
-                        <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="input_act.php" enctype="multipart/form-data">
+                        <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
                             <div class="form-group ">
-                                <label for="nama_lengkap" class="control-label col-lg-4">Nama Lengkap<strong> (Wajib)</strong></label>
+                                <label for="title" class="control-label col-lg-4">Nama Lengkap<strong> (Wajib)</strong></label>
                                 <div class="col-lg-8">
-                                <input class=" form-control" id="nama_lengkap" name="nama_lengkap" minlength="2" type="text" required />
+                                <input class=" form-control" id="title" name="title" minlength="2" type="text" required />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-4">Tanggal Lahir<strong> (Wajib)</strong></label>
                                 <div class="col-lg-8 col-xs-11">
-                                    <input class="form-control form-control-inline input-medium default-date-picker" size="16" type="text" name="tgl_lahir">
+                                    <input class="form-control form-control-inline input-medium default-date-picker" size="16" type="text" value="">
                                     <span class="help-block">Pilih Tanggal Lahir</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-4">Pendidikan Terakhir<strong> (Wajib)</strong></label>
                                 <div class="col-lg-8 col-xs-11">
-                                <textarea class="form-control" name="educate_hm" id="contact-message" placeholder="Pendidikan Terakhit" rows="3" data-rule="required" data-msg="Please write something for us"></textarea>
+                                <textarea class="form-control" name="message" id="contact-message" placeholder="Pendidikan Terakhit" rows="3" data-rule="required" data-msg="Please write something for us"></textarea>
                                 <div class="validate"></div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-4">Pengalaman<strong> (Wajib)</strong></label>
                                 <div class="col-lg-8 col-xs-11">
-                                <textarea class="form-control" name="pengalaman" id="contact-message" placeholder="Masukkan Pengalaman " rows="5" ></textarea>
+                                <textarea class="form-control" name="message" id="contact-message" placeholder="Masukkan Pengalaman " rows="5" ></textarea>
                                 <div class="validate"></div>
                                 </div>
                             </div>
@@ -90,27 +91,36 @@
                   </tr>
                 </thead>
                 <tbody>
-                <?php
-                  include 'C:\xampp\htdocs\SMPN7Bondowoso\admin\config\conn.php';
-                  $data = mysqli_query($db, "SELECT * FROM headmaster");
-                  while($item = mysqli_fetch_array($data)){
-                ?>
                   <tr class="">
                     <td> 
                         <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                            <img src="<?=$_ENV['base_url']?>img_uploaded/<?=$item['picture_hm']?>" alt="" />
+                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
                         </div>
                     </td>
-                    <td><?=$item['name_hm']?></td>
-                    <td class="hidden-phone"><?=$item['educate_hm']?></td>
-                    <td class="center hidden-phone"><?=$item['experience']?></td>
-                    <td class="center hidden-phone"><?=$item['date_hm']?></td>
+                    <td>Merupakan salah satu sekolah adiwiyata</td>
+                    <td class="hidden-phone">Win 95+</td>
+                    <td class="center hidden-phone">4</td>
+                    <td class="center hidden-phone">4</td>
                     <td>
-                      <a href="edit-data.php?id=<?=$item['id']?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a href="delete-data.php?id=<?=$item['id']?>" type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
-                  <?php } ?>
+                  <tr class="">
+                    <td>
+                      <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
+                      </div>
+                    </td>
+                    <td>Merupakan salah satu sekolah adiwiyata</td>
+                    <td class="hidden-phone">Win 95+</td>
+                    <td class="center hidden-phone">4</td>
+                    <td class="center hidden-phone">4</td>
+                    <td>
+                      <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
           </div>

@@ -2,13 +2,19 @@
   $aktif = "class='active'";
   $mati =  "";
 ?>
+<?php
+  $sql = mysqli_query($db,"SELECT * FROM admin WHERE id ='1'");
+
+  while ($data = mysqli_fetch_assoc($sql)) {
+
+?>
 <!--sidebar start-->
  <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="<?=$_ENV['base_url']?>img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Super Admin</h5>
+          <p class="centered"><a href="<?=$_ENV['base_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/<?=$data['picture_admin']?>" class="img-circle" width="80"></a></p>
+          <h5 class="centered"><?=$data['name_admin']?></h5>
         
           <li class="mt" >
             <a  href="<?=$_ENV['base_url']?>"<?=($title == "home")? $aktif : $mati;?>>
@@ -46,7 +52,7 @@
               <span>Galeri & Sarana Prasarana</span>
             </a>
             <ul class="sub">
-              <li><a href="<?=$_ENV['base_url']?>public/pictures/data-galeri/">Data Geleri</a></li>
+              <li><a href="<?=$_ENV['base_url']?>public/pictures/data-galeri/">Data Geleri Kegiatan</a></li>
               <li><a href="<?=$_ENV['base_url']?>public/pictures/data-sarana/">Data Sarana Prasarana</a></li>
             </ul>
           </li>
@@ -54,4 +60,5 @@
         <!-- sidebar menu end-->
       </div>
     </aside>
+<?php } ?>
 <!--sidebar end-->

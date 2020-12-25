@@ -11,6 +11,7 @@
   <?php $title = "informasi";?>
   <?php include "../../partials/sidebar.php"?>
   <?php include "../../partials/edit_profile.php"?>
+  <?php include "../../partials/reset-password.php"?>
   <section id="main-content">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>DATA INFORMASI</h3>
@@ -23,7 +24,7 @@
          
           }
           if (isset($_SESSION['hapus']) && !empty($_SESSION['hapus'])) { ?>
-            <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['hapus']; ?>.</div>
+             <div class="alert alert-danger"><b>Peringatan!</b> <?=$_SESSION['hapus']; ?>.</div
           <?php
             unset($_SESSION['hapus']);
           }else{

@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  if (!isset($_SESSION["user"])) {
+  header("Location:login.php");
+   exit;
+ }
+  $id_admin = $_SESSION['id_admin'];
+  $username = $_SESSION['user']; 
+  $password = $_SESSION['psw'];
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
