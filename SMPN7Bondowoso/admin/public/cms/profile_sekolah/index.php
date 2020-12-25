@@ -13,7 +13,9 @@
   <?php include "../../../partials/edit_profile.php"?>
   <section id="main-content">
       <section class="wrapper site-min-height">
+
         <h3><i class="fa fa-angle-right"></i> PROFILE SEKOLAH</h3>
+
         <p>digunakan untuk memanipulasi data pada halaman Profile</p>
         <?php 
           if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
