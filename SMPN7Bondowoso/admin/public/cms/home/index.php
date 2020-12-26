@@ -18,6 +18,12 @@
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
             <a type="button" href="add-cms.php" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Banner</a>
+            <?php 
+                  $sql = "SELECT * FROM landing_page ORDER BY id ASC";
+                  $result = mysqli_query($db, $sql);
+            while ($row =mysqli_) {
+            
+            }?>
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>

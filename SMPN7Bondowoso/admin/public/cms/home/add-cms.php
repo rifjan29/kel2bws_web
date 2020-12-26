@@ -14,13 +14,13 @@
     <section id="main-content">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i> CMS (Control Management System)</h3>
-        <p>digunakan untuk memanipulasi data pada halaman utama</p>
+        <p>digunakan untuk memanipulasi data pada Halaman utama</p>
         <div class="row mt">
           <div class="col-lg-12">
           <div class="form-panel">
               <div class=" form">
                   <!-- form CMS  -->
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="<?=$_ENV['base_url']?>controller/home/tambah-halaman.php">
+                <form class="cmxform form-horizontal style-form" id="commentForm" enctype="multipart/form-data" method="POST" action="tambah.php">
                   <div class="form-group ">
                     <label for="title" class="control-label col-lg-2">Judul Banner <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
@@ -36,7 +36,7 @@
                   <div class="form-group">
                         <label for="gambar_banner" class="control-label col-md-2">Gambar Banner <strong>(Wajib)</strong></label> 
                     <div class="col-md-9 ">
-                        <input type="file" name="foto[]" required="required" id="gambar_banner"  multiple/>
+                        <input type="file" name="file" required="required"/>
                         <div class="gambar-banner">
                             <span class="label label-info">NOTE!</span>
                             <span>
@@ -53,7 +53,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Simpan</button>
+                      <button class="btn btn-theme" type="submit" name="save">Simpan</button>
                       <button class="btn btn-theme04" type="reset" value="reset">Batal</button>
                     </div>
                   </div>

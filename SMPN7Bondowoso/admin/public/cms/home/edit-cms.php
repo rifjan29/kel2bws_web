@@ -13,14 +13,14 @@
     <!-- endNavbar -->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> CMS (Control Management System)</h3>
+        <h3><i class="fa fa-angle-right"></i> CMS (Control qwgwqManagement System)</h3>
         <p>digunakan untuk memanipulasi data pada halaman utama</p>
         <div class="row mt">
           <div class="col-lg-12">
           <div class="form-panel">
               <div class=" form">
                   <!-- form CMS  -->
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="">
                   <div class="form-group ">
                     <label for="title" class="control-label col-lg-2">Judul Banner <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
