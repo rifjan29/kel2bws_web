@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  if (!isset($_SESSION["user"])) {
+  header("Location:login.php");
+   exit;
+ }
+  $id_admin = $_SESSION['id_admin'];
+  $username = $_SESSION['user']; 
+  $password = $_SESSION['psw'];
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +32,7 @@
   <link href="<?=$_ENV['base_url']?>lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
   <link href="<?=$_ENV['base_url']?>lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="<?=$_ENV['base_url']?>lib/advanced-datatable/css/DT_bootstrap.css" />
+  
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <link href="<?=$_ENV['base_url']?>summernote-0.8/summernote-lite.min.css" rel="stylesheet">
   <script src="<?=$_ENV['base_url']?>summernote-0.8/summernote-lite.min.js"></script>
@@ -29,4 +42,4 @@
   <link rel="stylesheet" type="text/css" href="<?=$_ENV['base_url']?>lib/bootstrap-datepicker/css/datepicker.css" />
   <link rel="stylesheet" type="text/css" href="<?=$_ENV['base_url']?>lib/bootstrap-daterangepicker/daterangepicker.css" />
   <link rel="stylesheet" type="text/css" href="<?=$_ENV['base_url']?>lib/bootstrap-timepicker/compiled/timepicker.css" />
-  <link rel="stylesheet" type="text/css" href="lib/bootstrap-datetimepicker/datertimepicker.css" />
+  <link rel="stylesheet" type="text/css" href="<?=$_ENV['base_url']?>lib/bootstrap-datetimepicker/datertimepicker.css" />

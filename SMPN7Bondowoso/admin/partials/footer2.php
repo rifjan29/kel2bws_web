@@ -11,6 +11,12 @@
           </a>
       </div>
     </footer>
+    <?php
+      $sql = mysqli_query($db,"SELECT * FROM admin WHERE id ='1'");
+
+      while ($data = mysqli_fetch_assoc($sql)) {
+
+    ?>
     <!--footer end-->
   </section>
   <!--common script for all pages-->
@@ -54,30 +60,17 @@
           [1, 'asc']
         ]
       });
-
-      $('#hidden-table-info tbody td img').live('click', function() {
-        var nTr = $(this).parents('tr')[0];
-        if (oTable.fnIsOpen(nTr)) {
-          /* This row is already open - close it */
-          this.src = "lib/advanced-datatable/media/images/details_open.png";
-          oTable.fnClose(nTr);
-        } else {
-          /* Open this row */
-          this.src = "lib/advanced-datatable/images/details_close.png";
-          oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
-        }
-      });
     });
   </script>
     <script type="text/javascript">
     $(document).ready(function() {
       var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
-        title: 'Selamat Datang Admin!',
+        title: 'Selamat Datang <?=$data['name_admin']?>!',
         // (string | mandatory) the text inside the notification
         text: 'Digunakan untuk memanipulasi data untuk website SMPN 7 Bondowoso',
         // (string | optional) the image to display on the left
-        image: '<?=$_ENV['base_url']?>img/ui-sam.jpg',
+        image: '<?=$_ENV['base_url']?>img_uploaded/<?=$data['picture_admin']?>',
         // (bool | optional) if you want it to fade out on its own or just sit there
         sticky: false,
         // (int | optional) the time you want it to be alive for before fading out
@@ -87,4 +80,16 @@
       });
       return false;
     });
+    function myFunction() {
+      var x = document.getElementById("password_lama");
+      var y = document.getElementById("password_baru");
+      if (x.type === "password" && y.type === "password") {
+        x.type = "text";
+        y.type = "text";
+      } else {
+        x.type = "password";
+        y.type = "password";
+        }
+      }
   </script>
+<?php }?>

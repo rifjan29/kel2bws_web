@@ -28,27 +28,27 @@
                     </div>
                     <div class="modal-body">
                       <!-- form GURU & KARYAWAN  -->
-                        <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                        <form class="cmxform form-horizontal style-form" id="commentForm" enctype="multipart/form-data" method="POST" action="../../controller/guru_karyawan/input_act.php?act=inputdata" role="form">
                             <div class="form-group ">
                                 <label for="title" class="control-label col-lg-4">Nama Lengkap<strong> (Wajib)</strong></label>
                                 <div class="col-lg-8">
-                                <input class=" form-control" id="title" name="title" minlength="2" type="text" required />
+                                <input class=" form-control" id="title" name="name" minlength="2" type="text" required />
                                 </div>
                             </div>
                             <div class="form-group ">
                                 <label for="keterangan" class="control-label col-lg-4">Kategori <strong>(Wajib)</strong></label>
                                 <div class="col-lg-8">
-                                <select class="form-control">
+                                <select class="form-control" name="ket">
                                     <option value="pilih">--Pilih--</option>
-                                    <option value="0">Guru</option>
-                                    <option value="1">Karyawan</option>   
+                                    <option value="guru">Guru</option>
+                                    <option value="karyawan">Karyawan</option>   
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group ">
                                 <label for="mapel" class="control-label col-lg-4">Pekerjaan<strong> (Wajib)</strong></label>
                                 <div class="col-lg-8">
-                                <input class=" form-control" id="mapel" name="mapel" minlength="2" type="text" required />
+                                <input class=" form-control" id="mapel" name="position" minlength="2" type="text" required />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -66,14 +66,14 @@
                     </div>
                     <div class="modal-footer">
                       <button type="reset" value="reset" class="btn btn-default">Batal</button>
-                      <button type="button" class="btn btn-primary">Simpan</button>
+                      <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
                     </div>
                     </form>
                         <!-- END FORM GURU DAN KARYAWAN -->   
                   </div>
                 </div>
               </div>
-              <!-- end modal             -->
+              <!-- end modal -->
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
@@ -84,35 +84,28 @@
                     <th>Aksi</th>
                   </tr>
                 </thead>
+                <?php
+                  include '../../config/conn.php';
+                  $query_mysql = mysqli_query($db, "SELECT * FROM employees");
+                  $list = 1;
+                  while ($emp = mysqli_fetch_array($query_mysql)){
+                ?>
                 <tbody>
                   <tr class="">
                     <td>
                       <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
+                        <img src="<?=$_ENV['base_url']?>img_uploaded/guru_karyawan/<?php echo $emp['picture_emp']; ?>" alt="" />
                       </div>
                     </td>
-                    <td>Merupakan salah satu sekolah adiwiyata</td>
-                    <td class="hidden-phone">Win 95+</td>
-                    <td class="center hidden-phone">4</td>
+                    <td><?=$emp['name_emp']; ?></td>
+                    <td class="hidden-phone"><?=$emp['category_emp']; ?></td>
+                    <td class="center hidden-phone"><?=$emp['position_emp']; ?></td>
                     <td>
-                      <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-warning"href="edit-data.php?id=<?=$emp['id']; ?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger" href="../../controller/guru_karyawan/drop_act.php?id=<?php echo $emp['id']; ?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
-                  <tr class="">
-                    <td> 
-                      <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
-                      </div>
-                    </td>
-                    <td>Merupakan salah satu sekolah adiwiyata</td>
-                    <td class="hidden-phone">Win 95+</td>
-                    <td class="center hidden-phone">4</td>
-                    <td>
-                      <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
-                    </td>
-                  </tr>
+                  <?php } ?>
                 </tbody>
               </table>
           </div>

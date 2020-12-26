@@ -1,4 +1,5 @@
 <?php 
+  session_start();
   include  "../../../config/conn.php";
   include "../../../partials/header2.php";
 ?>
@@ -15,12 +16,28 @@
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>PROFILE SEKOLAH</h3>
         <p>digunakan untuk memanipulasi data pada halaman Profile</p>
+        <?php
+                    if (isset($_SESSION['failed_message']) && !empty($_SESSION['failed_message'])) { ?>
+                      <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['failed_message']; ?>.</div>
+                    <?php
+                      unset($_SESSION['failed_message']);
+                    }else{
+                   
+                    }
+                    if (isset($_SESSION['failed_picture']) && !empty($_SESSION['failed_picture'])) { ?>
+                      <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['failed_picture']; ?>.</div>
+                    <?php
+                      unset($_SESSION['failed_picture']);
+                    }else{
+                   
+                    }
+        ?>
         <div class="row mt">
           <div class="col-lg-12">
           <div class="form-panel">
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" enctype="multipart/form-data" action="..\..\..\controller\home\cms\profile_sekolah\input_act.php">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" enctype="multipart/form-data" action="<?=$_ENV['base_url']?>controller/profile_sekolah/input_act.php">
                   <div class="form-group ">
                     <label for="title" class="control-label col-lg-2">Arti Logo <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
@@ -30,7 +47,7 @@
                   <div class="form-group">
                         <label for="gambar_banner" class="control-label col-md-2">Gambar Logo <strong>(Wajib)</strong></label> 
                     <div class="col-md-9 ">
-                        <input type="file" name="foto" required="required" id="gambar_banner"/>
+                        <input type="file" name="foto" id="gambar_banner"/>
                         <div class="gambar-banner">
                             <span class="label label-info">Catatan!</span>
                             <span>
@@ -60,7 +77,7 @@
                   <div class="form-group">
                     <label for="url_location" class="control-label col-lg-2">URL Location <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="url_location" type="url" name="url" />
+                      <input class="form-control " id="text" type="text" name="url" />
                     </div>
                   </div>
                   <div class="form-group ">
