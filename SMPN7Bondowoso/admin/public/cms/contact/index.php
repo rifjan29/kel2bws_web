@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
   include  "../../../config/conn.php";
   include "../../../partials/header2.php";
@@ -14,6 +15,23 @@
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>Data Kontak SMPN7 Bondowoso</h3>
         <p>digunakan untuk memanipulasi data pada halaman Utama (Kontak)</p>
+        <?php 
+          if (isset($_SESSION['pesan_berhasil']) && !empty($_SESSION['pesan_berhasil'])) { ?>
+            <div class="alert alert-success"><b>Well done!</b> <?=$_SESSION['pesan_berhasil']; ?>.</div>
+          <?php
+            unset($_SESSION['pesan_berhasil']);
+          }
+          if (isset($_SESSION['pesan_gagal']) && !empty($_SESSION['pesan_gagal'])) { ?>
+            <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['pesan_gagal']; ?>.</div>
+          <?php
+            unset($_SESSION['pesan_gagal']);
+          }
+          if (isset($_SESSION['pesan_hapus']) && !empty($_SESSION['pesan_hapus'])) { ?>
+            <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['pesan_hapus']; ?>.</div>
+          <?php
+            unset($_SESSION['pesan_hapus']);
+          }
+        ?>
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
@@ -28,11 +46,11 @@
                     </div>
                     <div class="modal-body">
                       <!-- form GURU & KARYAWAN  -->
-                        <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                      <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="post" action="<?=$_ENV['base_url']?>controller/contact/tambah-kontak.php">
                         <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-2">E-Mail  <strong>(Wajib)</strong></label>
                             <div class="col-lg-10">
-                            <input class="form-control " id="cemail" type="email" name="email" required />
+                            <input class="form-control " id="cemail" type="email" name="email" required placeholder="exp:abd@gmxxxx" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -40,14 +58,14 @@
                             <div class="col-lg-10">
                                 <div class="input-group input-large" >
                                     <span class="input-group-addon">+62</span>
-                                    <input type="number" class="form-control" name="from" required>
+                                    <input placeholder="exp:89xxxxx" type="number" class="form-control" name="contact" required>
                                 </div>
                                     <span class="help-block" style="color:red">No Hp / No Whatsapp</span>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="reset" value="Reset" class="btn btn-default" >Batal</button>
+                      <button type="reset" value="Reset" type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-default" >Batal</button>
                       <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                     </form>
@@ -65,14 +83,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="">
-                    <td>SMPN7bondowoso@gmail.com</td>
-                    <td class="hidden-phone">0125210402421</td>
-                    <td>
-                      <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
-                    </td>
-                  </tr>
+                    <?php 
+                        $query = mysqli_query($db, "SELECT * FROM contact");
+                        while ($kontak = mysqli_fetch_array($query)) {
+                        ?>
+                        <tr>
+                          <td><?= $kontak['email'] ?></td>
+                          <td><?= $kontak['contact'] ?></td>
+                          <td>
+                        <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/cms/contact/edit-kontak.php?id=<?php echo $kontak['id'];?>"><i class="fa fa-edit"></i></a> |
+                        <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/contact/aksi-hapus-kontak.php?id=<?php echo $kontak['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                          </td>
+                        </tr>
+                      <?php } ?>
                 </tbody>
               </table>
           </div>

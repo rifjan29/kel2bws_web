@@ -1,20 +1,38 @@
+<?php session_start(); ?>
 <?php 
   include  "../../../config/conn.php";
-  include "../../../partials/header.php";
-?>
+  include "../../../partials/header2.php";
+?> 
 </head>
 <body>
-  <section id="container">
-    <!-- navbar  -->
-      <?php include "../../../partials/topbar.php"?> 
-      <?php $title = "cms";?>
-      <?php include "../../../partials/sidebar.php"?>
-      <?php include "../../../partials/edit_profile.php"?>
-    <!-- endNavbar -->
+<section id="container">
+  <!-- navbar  -->
+  <?php include "../../../partials/topbar.php"?> 
+  <?php $title = "cms";?>
+  <?php include "../../../partials/sidebar.php"?>
+  <?php include "../../../partials/edit_profile.php"?>
+  <!-- endNavbar -->
     <section id="main-content">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i> CMS (Control Management System)</h3>
         <p>digunakan untuk memanipulasi data pada Halaman utama</p>
+        <?php 
+          if (isset($_SESSION['pesan_gagal1']) && !empty($_SESSION['pesan_gagal1'])) { ?>
+            <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['pesan_gagal1']; ?>.</div>
+          <?php
+            unset($_SESSION['pesan_gagal2']);
+          }else if (isset($_SESSION['pesan_gagal2']) && !empty($_SESSION['pesan_gagal2'])) {?>
+            <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['pesan_gagal2']; ?>.</div>
+            <?php
+            unset($_SESSION['pesan_gagal2']);
+          }else if (isset($_SESSION['pesan_gagal3']) && !empty($_SESSION['pesan_gagal3'])) {?>
+            <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['pesan_gagal3']; ?>.</div>
+            <?php
+            unset($_SESSION['pesan_gagal3']);
+          }else{
+      
+          }
+        ?>
         <div class="row mt">
           <div class="col-lg-12">
           <div class="form-panel">

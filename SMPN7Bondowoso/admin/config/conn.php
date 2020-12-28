@@ -1,4 +1,5 @@
 <?php 
+    // base url
     require_once "check.php";
 
     // Digunakan menghubungkan database

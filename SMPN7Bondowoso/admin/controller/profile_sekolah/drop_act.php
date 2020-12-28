@@ -9,7 +9,7 @@
         $data_image =$data['profile_logo'];
     }
 
-    if ($data_image) {
+    if ($data_image != "") {
         unlink("../../img_uploaded/cms/profile_sekolah/$data_image");
         $sql = mysqli_query($db,"DELETE FROM profile WHERE id='$d'");
         session_start();

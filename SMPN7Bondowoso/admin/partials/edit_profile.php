@@ -17,7 +17,7 @@
                         <div class="col-lg-12 ">
                           <img src="<?=$_ENV['base_url']?>img_uploaded/<?=$data['picture_admin']?>" style="margin-bottom: 10px;" class="img-thumbnail" alt="asdaf">
                         </div>
-                        <form class="cmxform form-horizontal style-form" id="commentForm" enctype="multipart/form-data" method="post" action="<?=$_ENV['base_url']?>controller/edit_akun.php">
+                        <form class="cmxform form-horizontal style-form" id="commentForm" enctype="multipart/form-data" method="post" action="<?=$_ENV['base_url']?>controller/edit-akun.php">
                             <div class="form-group">
                                 <label for="picture_employees" class="control-label col-md-4">Foto 4x6</label> 
                                 <div class="col-md-8 ">

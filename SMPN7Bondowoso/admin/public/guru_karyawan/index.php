@@ -1,4 +1,5 @@
 <?php 
+  session_start();
   include  "../../config/conn.php";
   include "../../partials/header2.php";
 ?>
@@ -14,6 +15,36 @@
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i> GURU & KARYAWAN</h3>
         <p>digunakan untuk memanipulasi data pada halaman Guru & Karyawan</p>
+        <?php 
+          if (isset($_SESSION['edit_message']) && !empty($_SESSION['edit_message'])) { ?>
+            <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['edit_message']; ?>.</div>
+          <?php
+            unset($_SESSION['edit_message']);
+          }else{
+
+          }
+          if (isset($_SESSION['pesan_berhasil']) && !empty($_SESSION['pesan_berhasil'])) { ?>
+            <div class="alert alert-success"><b>Well done!</b> <?=$_SESSION['pesan_berhasil']; ?>.</div>
+          <?php
+            unset($_SESSION['pesan_berhasil']);
+          }else{
+
+          }
+          if (isset($_SESSION['gagal_edit']) && !empty($_SESSION['gagal_edit'])) { ?>
+            <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['gagal_edit']; ?>.</div>
+          <?php
+            unset($_SESSION['gagal_edit']);
+          }else{
+
+          }
+          if (isset($_SESSION['kategori']) && !empty($_SESSION['kategori'])) { ?>
+            <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['kategori']; ?>.</div>
+          <?php
+            unset($_SESSION['kategori']);
+          }else{
+
+          }
+        ?>
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
@@ -81,7 +112,7 @@
                     <th>Nama Lengkap</th>
                     <th class="hidden-phone">Kategori</th>
                     <th class="hidden-phone">Pekerjaan</th>
-                    <th>Aksi</th>
+                    <th rowspan="2">Aksi</th>
                   </tr>
                 </thead>
                 <?php

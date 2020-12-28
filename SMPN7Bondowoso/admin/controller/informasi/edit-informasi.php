@@ -28,7 +28,6 @@
                 unlink("../../img_uploaded/informasi/$gambar");
                 $query .= "WHERE `news`.`id` = '$id'";
                 $result = mysqli_query($db, $query) or die (mysqli_error($db));
-    
                 if (!$result) {
                     session_start();
                     $_SESSION['failed_message'] = "Data Gagal Tersimpan !";

@@ -44,7 +44,7 @@
                     <th>Judul Informasi</th>
                     <th>Isi Informasi</th>
                     <th class="hidden-phone">Kategori</th>
-                    <th>Aksi</th>
+                    <th rowspan="2">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>

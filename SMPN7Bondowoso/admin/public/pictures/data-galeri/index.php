@@ -1,4 +1,5 @@
 <?php 
+  session_start();
   include  "../../../config/conn.php";
   include "../../../partials/header2.php";
 ?>

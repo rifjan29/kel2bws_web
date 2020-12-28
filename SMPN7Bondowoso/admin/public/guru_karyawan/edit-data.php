@@ -17,15 +17,7 @@
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i>PROFILE SEKOLAH</h3>
         <p>digunakan untuk memanipulasi data pada halaman Profile</p>
-        <?php
-             if (isset($_SESSION['failed_message']) && !empty($_SESSION['failed_message'])) { ?>
-              <div class="alert alert-danger"><b>Well done!</b> <?=$_SESSION['failed_message']; ?>.</div>
-            <?php
-              unset($_SESSION['failed_message']);
-            }else{
-           
-            }
-        ?>
+
         <div class="row mt">
           <div class="col-lg-12">
           <div class="form-panel">
@@ -64,22 +56,12 @@
                   </div>
                   <div class="form-group ">
                     <label for="category_emp" class="control-label col-lg-2">Kategori <strong>(Wajib)</strong></label>
-                                <div class="col-lg-10">
-                                <select class="form-control" name="ket">
-                                <?php 
-                                if ($d['category_emp']=='guru'){
-                                    echo 
-                                    "<option value='guru' selected>Guru</option>
-                                    <option value='karyawan'>Karyawan</option>";
-                                    }
-                                    else {
-                                    echo 
-                                    "<option value='guru'>Guru</option>
-                                    <option value='karyawan' selected>Karyawan</option>";
-                                    }
-                                    echo "</select>";     
-                                ?>
-                                </div>
+                    <div class="col-lg-10">
+                      <select class="form-control" name="keterangan">
+                        <option value="guru"  <?php if($d['category_emp']=="guru"){echo "selected";} ?>>Guru</option>
+                        <option value="karyawan"  <?php if($d['category_emp']=="karyawan"){echo "selected";} ?>>Karyawan</option>   
+                      </select>
+                    </div>
                   </div>
                   <div class="form-group ">
                     <label for="position_emp" class="control-label col-lg-2">Visi Sekolah <strong>(Wajib)</strong></label>
@@ -142,6 +124,6 @@
         ]
       });
     </script>
-    <?php include "../../../partials/footer2.php"?>
+    <?php include "../../partials/footer2.php"?>
    </body>
 </html>

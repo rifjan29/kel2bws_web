@@ -47,7 +47,7 @@
                     <th class="hidden-phone">Visi</th>
                     <th class="hidden-phone">Misi</th>
                     <th>Alamat</th>
-                    <th>Aksi</th>
+                    <th rowspan="2">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>

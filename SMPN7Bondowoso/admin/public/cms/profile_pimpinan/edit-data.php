@@ -1,4 +1,5 @@
 <?php 
+  session_start();
   include '../../../config/conn.php';
   include '../../../partials/header2.php';
 ?>
@@ -20,10 +21,7 @@
           <div class="form-panel">
           <!-- Awal Script Ambil Data Database -->
           <?php
-
-            include 'C:\xampp\htdocs\SMPN7Bondowoso\admin\config\conn.php';
-
-            $id = $_GET['id'];
+            $id = $_GET['id_pimpinan'];
             $query_mysql = mysqli_query($db,"SELECT * FROM headmaster WHERE id= '$id'");
             $nomor = 1;
             while ($d = mysqli_fetch_array($query_mysql)){
@@ -63,7 +61,7 @@
                 <div class="form-group">
                     <label for="picture_employees" class="control-label col-md-4">Foto 4x6 <strong>(Wajib)</strong></label> 
                     <div class="col-md-8 ">
-                      <img src="<?=$_ENV['base_url']?>img_uploaded/<?=$d['picture_hm']?>" width="120px" height="120px"><br><br>
+                      <img src="<?=$_ENV['base_url']?>img_uploaded/cms/profile_pimpinan/<?=$d['picture_hm']?>" width="120px" height="120px" alt="Gambar Rusak"><br><br>
                       <input type="file" name="foto" id="picture_employees" />
                       <div class="picture_employees">
                           <span class="label label-info">NOTE!</span>
@@ -71,10 +69,12 @@
                       </div>
                     </div>    
                 </div>
+                <input type="text" hidden name="id" value="<?=$d['id']?>">
+                <input type="text" hidden name="gambar_lama" value="<?=$d['picture_hm']?>">
                   <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
+                    <div class="col-lg-offset-2 col-lg-8">
                       <button class="btn btn-theme" type="submit" name="save">Save</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
+                      <a class="btn btn-theme04" type="button" href="index.php">Cancel</a>
                     </div>
                   </div>
                 </form>
