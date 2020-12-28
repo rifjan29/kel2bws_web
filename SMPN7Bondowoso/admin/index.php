@@ -14,6 +14,17 @@
     <?php include "partials/sidebar.php"?>
     <?php include "partials/edit_profile.php"?>
     <?php include "partials/reset-password.php"?>
+    <?php
+      $galeri = mysqli_query($db, "SELECT * FROM gallery WHERE galeri_kategori = 'kegiatan'");
+      $data_galeri = mysqli_num_rows($galeri);
+      $sapras = mysqli_query($db, "SELECT * FROM gallery WHERE galeri_kategori = 'sapras'");
+      $data_sapras = mysqli_num_rows($galeri);
+      $news = mysqli_query($db, "SELECT * FROM news");
+      $data_news = mysqli_num_rows($news);
+      $emp = mysqli_query($db, "SELECT * FROM employees");
+      $data_emp = mysqli_num_rows($emp);
+      
+    ?>
     <!-- **********************************************************************************************************************************************************   
     <!--main content start-->
     <section id="main-content">
@@ -43,7 +54,7 @@
                       <p><strong>Data</strong><br/>Galeri:</p>
                     </div>
                     <div class="col-sm-6 col-xs-6">
-                      <h2>1</h2>
+                      <h2><?=$data_galeri;?></h2>
                     </div>
                   </div>
                 </div>
@@ -63,7 +74,7 @@
                       <p>Data<br/>Sarana Prasarana:</p>
                     </div>
                     <div class="col-sm-6 col-xs-6">
-                      <h2 style="color:#264653;">20</h2>
+                      <h2 style="color:#264653;"><?=$data_sapras;?></h2>
                     </div>
                   </div>
                 </div>
@@ -82,7 +93,7 @@
                       <p>Data<br/>Berita & Prestasi:</p>
                     </div>
                     <div class="col-sm-6 col-xs-6">
-                      <h2 style="color:#264653;">50</h2>
+                      <h2 style="color:#264653;"><?=$data_news;?></h2>
                     </div>
                   </div>
                 </div>
@@ -100,14 +111,12 @@
                       <p><strong>Data</strong><br/>Guru & Karyawan:</p>
                     </div>
                     <div class="col-sm-6 col-xs-6">
-                      <h2>1</h2>
+                        <h2><?=$data_emp;?></h2>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- /Guru & Karyawan -->            
-            
-             
             </div>
       
          

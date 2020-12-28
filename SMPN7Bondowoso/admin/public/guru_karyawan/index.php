@@ -13,7 +13,7 @@
   <?php include "../../partials/edit_profile.php"?>
   <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> GURU & KARYAWAN</h3>
+        <h3><i class="fa fa-angle-right"></i> Guru & Karyawan</h3>
         <p>digunakan untuk memanipulasi data pada halaman Guru & Karyawan</p>
         <?php 
           if (isset($_SESSION['edit_message']) && !empty($_SESSION['edit_message'])) { ?>

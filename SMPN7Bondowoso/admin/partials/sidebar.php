@@ -34,12 +34,6 @@
               <li><a href="<?=$_ENV['base_url']?>public/cms/profile_sekolah/">Tentang Sekolah</a></li>
             </ul>
           </li>
-          <li class="sub-menu">
-            <a href="<?=$_ENV['base_url']?>public/informasi/" <?=($title == "informasi")? $aktif : $mati;?>>
-              <i class="fa fa-list-alt"></i>
-              <span>Data Informasi</span>
-            </a>
-          </li>
           <li class="sub-menu" >
             <a href="<?=$_ENV['base_url']?>public/guru_karyawan/" <?=($title == "pengajar")? $aktif : $mati;?>>
               <i class="fa fa-users"></i>
@@ -47,14 +41,16 @@
             </a>
           </li>
           <li class="sub-menu">
-            <a href="" <?=($title == "gambar")? $aktif : $mati;?>>
-              <i class="fa fa-picture-o"></i>
-              <span>Galeri & Sarana Prasarana</span>
+            <a href="<?=$_ENV['base_url']?>public/informasi/" <?=($title == "informasi")? $aktif : $mati;?>>
+              <i class="fa fa-list-alt"></i>
+              <span>Data Informasi</span>
             </a>
-            <ul class="sub">
-              <li><a href="<?=$_ENV['base_url']?>public/pictures/data-galeri/">Data Geleri Kegiatan</a></li>
-              <li><a href="<?=$_ENV['base_url']?>public/pictures/data-sarana/">Data Sarana Prasarana</a></li>
-            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="<?=$_ENV['base_url']?>public/pictures/" <?=($title == "gambar")? $aktif : $mati;?>>
+              <i class="fa fa-list-alt"></i>
+              <span>Galeri Sekolah</span>
+            </a>
           </li>
         </ul>
         <!-- sidebar menu end-->

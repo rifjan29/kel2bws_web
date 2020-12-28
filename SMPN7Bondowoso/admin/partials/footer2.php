@@ -6,7 +6,7 @@
         <div class="credits">
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="advanced_table.html#" class="go-top">
+        <a href="" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>

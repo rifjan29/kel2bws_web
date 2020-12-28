@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2020 at 10:04 AM
+-- Generation Time: Dec 28, 2020 at 08:42 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -33,8 +33,15 @@ CREATE TABLE `admin` (
   `name_admin` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `picture_admin` int(11) NOT NULL
+  `picture_admin` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name_admin`, `username`, `password`, `picture_admin`) VALUES
+(1, 'Rifjan Jundila', 'admin', '202cb962ac59075b964b07152d234b70', 'ui-sam.jpg');
 
 -- --------------------------------------------------------
 
@@ -47,6 +54,13 @@ CREATE TABLE `contact` (
   `contact` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `contact`, `email`) VALUES
+(3, '089516325685', 'rjndla@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -62,6 +76,13 @@ CREATE TABLE `employees` (
   `picture_emp` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `name_emp`, `category_emp`, `position_emp`, `picture_emp`) VALUES
+(1, 'Rifjan Jundilaqwafafawet', 'karyawan', 'qwrqrq', 'ui-danro.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -72,25 +93,19 @@ CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
   `gallery_title` varchar(255) NOT NULL,
   `gallery_info` text NOT NULL,
-  `gallery_date` date NOT NULL,
-  `gallery_picture` varchar(255) NOT NULL,
-  `aid` int(11) NOT NULL
+  `galeri_kategori` enum('kegiatan','sapras') NOT NULL,
+  `gallery_date` varchar(100) NOT NULL,
+  `aid` int(11) NOT NULL,
+  `gallery_picture` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `gallery_others`
+-- Dumping data for table `gallery`
 --
 
-CREATE TABLE `gallery_others` (
-  `id` int(11) NOT NULL,
-  `galery_others_picture` varchar(255) NOT NULL,
-  `galery_others_tittle` varchar(255) NOT NULL,
-  `galery_others_info` text NOT NULL,
-  `galery_others_date` date NOT NULL,
-  `aid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `gallery` (`id`, `gallery_title`, `gallery_info`, `galeri_kategori`, `gallery_date`, `aid`, `gallery_picture`) VALUES
+(60, 'Contoh Galeri Kegiatan', 'Test', 'kegiatan', '12-29-2020', 1, '493-ny.jpg'),
+(61, 'afaqwfwqqwrfwqewqeqwras', 'fasfasfa', 'sapras', '12-02-2020', 1, '469-ui-divya.jpg');
 
 -- --------------------------------------------------------
 
@@ -101,11 +116,18 @@ CREATE TABLE `gallery_others` (
 CREATE TABLE `headmaster` (
   `id` int(11) NOT NULL,
   `name_hm` varchar(255) NOT NULL,
-  `date_hm` date NOT NULL,
+  `date_hm` varchar(100) NOT NULL,
   `educate_hm` text NOT NULL,
   `experience` text NOT NULL,
   `picture_hm` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `headmaster`
+--
+
+INSERT INTO `headmaster` (`id`, `name_hm`, `date_hm`, `educate_hm`, `experience`, `picture_hm`) VALUES
+(5, 'Rifjan Jundila', '12-28-2020', 'SMA', 'Pekerja Luar', '393-ui-sherman.jpg');
 
 -- --------------------------------------------------------
 
@@ -121,6 +143,13 @@ CREATE TABLE `landing_page` (
   `page_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `landing_page`
+--
+
+INSERT INTO `landing_page` (`id_page`, `page_title`, `page_content`, `page_slider`, `page_url`) VALUES
+(6, 'smpn 7 Bondowoso', 'Sekolah Adiwiyata', '759-profile-02.jpg', 'https://www.academia.edu/19158539/Teknik_Penulisan_Tugas_Akhir');
+
 -- --------------------------------------------------------
 
 --
@@ -130,13 +159,20 @@ CREATE TABLE `landing_page` (
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
   `news_tittle` varchar(255) NOT NULL,
-  `news_content` date NOT NULL,
+  `news_content` text NOT NULL,
   `news_picture` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `news_category` enum('berita','prestasi') NOT NULL,
   `news_date` date NOT NULL,
   `aid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `news_tittle`, `news_content`, `news_picture`, `slug`, `news_category`, `news_date`, `aid`) VALUES
+(58, 'Kejadian Penculikan Bayi Usia 20', '<p>qwrqtqwt</p>', '339-ui-divya.jpg', 'Kejadian-Penculikan-Bayi-Usia-20', 'berita', '2020-12-28', 1);
 
 -- --------------------------------------------------------
 
@@ -152,8 +188,15 @@ CREATE TABLE `profile` (
   `profile_misi` text NOT NULL,
   `profile_logo` varchar(255) NOT NULL,
   `profile_location` varchar(255) NOT NULL,
-  `profile_ address` varchar(255) NOT NULL
+  `profile_address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`id`, `profile_title`, `profile_history`, `profile_visi`, `profile_misi`, `profile_logo`, `profile_location`, `profile_address`) VALUES
+(7, 'wq', '<p>qwr</p>', 'qwr', '<p>qwrwqr</p>', '500.png', 'https://www.academia.edu/33281928/MENELUSURI_DAN_MENGANALISIS_MODEL_TEKS_AKADEMIK', 'Lumajangwqrqw');
 
 --
 -- Indexes for dumped tables
@@ -181,13 +224,6 @@ ALTER TABLE `employees`
 -- Indexes for table `gallery`
 --
 ALTER TABLE `gallery`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `aid` (`aid`);
-
---
--- Indexes for table `gallery_others`
---
-ALTER TABLE `gallery_others`
   ADD PRIMARY KEY (`id`),
   ADD KEY `aid` (`aid`);
 
@@ -224,49 +260,49 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `gallery_others`
---
-ALTER TABLE `gallery_others`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `headmaster`
 --
 ALTER TABLE `headmaster`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `landing_page`
 --
 ALTER TABLE `landing_page`
-  MODIFY `id_page` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_page` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -277,12 +313,6 @@ ALTER TABLE `profile`
 --
 ALTER TABLE `gallery`
   ADD CONSTRAINT `gallery_ibfk_1` FOREIGN KEY (`aid`) REFERENCES `admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `gallery_others`
---
-ALTER TABLE `gallery_others`
-  ADD CONSTRAINT `gallery_others_ibfk_1` FOREIGN KEY (`aid`) REFERENCES `admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `news`

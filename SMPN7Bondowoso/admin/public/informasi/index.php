@@ -13,7 +13,7 @@
   <?php include "../../partials/edit_profile.php"?>
   <?php include "../../partials/reset-password.php"?>
   <section id="main-content">
-      <section class="wrapper site-min-height">
+      <section class="wrapper site-min-height" style="margin-top: 50px !important;">
         <h3><i class="fa fa-angle-right"></i>DATA INFORMASI</h3>
         <p>digunakan untuk memanipulasi data pada halaman Informasi (Berita & Prestasi)</p>
         <?php if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>

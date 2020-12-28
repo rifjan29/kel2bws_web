@@ -20,8 +20,8 @@
   <title>Admin - SMPN 7 Bondowoso</title>
 
   <!-- Favicons -->
-  <link href="<?=$_ENV['base_url']?>img/favicon.png" rel="icon">
-  <link href="<?=$_ENV['base_url']?>img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?=$_ENV['base_url']?>img_uploaded/LOGO_SMPN7.png" rel="icon">
+  <link href="<?=$_ENV['base_url']?>img_uploaded/LOGO_SMPN7.png" rel="apple-touch-icon">
   
   <!-- Bootstrap core CSS -->
   <link href="<?=$_ENV['base_url']?>lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
