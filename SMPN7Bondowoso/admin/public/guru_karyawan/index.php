@@ -96,7 +96,7 @@
                             </div>             
                     </div>
                     <div class="modal-footer">
-                      <button type="reset" value="reset" class="btn btn-default">Batal</button>
+                      <button type="reset" data-dismiss="modal" aria-hidden="true"class="btn btn-default">Batal</button>
                       <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
                     </div>
                     </form>
