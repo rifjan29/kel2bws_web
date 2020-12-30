@@ -14,7 +14,7 @@ if(isset($_POST['save'])){
     $file_tmp = $_FILES['file']['tmp_name'];	
     $nama_baru =  rand(1,999).'-'.$nama;
     if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-        if($ukuran < 1044070){			
+        if($ukuran != 0){			
             move_uploaded_file($file_tmp,'../../../img_uploaded/cms/landing_page/'.$nama_baru);
             $sql = mysqli_query($db,"INSERT INTO landing_page VALUES (NULL,'$title', '$ket', '$nama_baru', '$url')");
             if($sql){
