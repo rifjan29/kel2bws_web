@@ -82,7 +82,7 @@
                   <div class="form-group">
                     <label for="url_location" class="control-label col-lg-2">URL Location <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="url_location" type="text" name="url" value="<?php echo $d['profile_location']; ?>" />
+                      <textarea class=" form-control" name="url" id="url_location" cols="30" rows="10"><?php echo $d['profile_location']; ?></textarea>
                     </div>
                   </div>
                   <div class="form-group ">

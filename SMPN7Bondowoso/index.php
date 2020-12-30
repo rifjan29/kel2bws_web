@@ -235,7 +235,7 @@
 			<div class="container">
 			<div class="row no-gutters about">
 				<div class="col-lg-6 mt-5">
-				  <img src="<?=$_ENV['base_url']?>img_uploaded/cms/profile_sekolah/<?=$data_profile['profile_logo']?>" class="mx-auto d-block img-fluid" height="50%" alt="">  
+				  <img src="<?=$_ENV['base_url']?>img_uploaded/cms/profile_sekolah/<?=$data_profile['profile_logo']?>" class="mx-auto d-block img-fluid" height="50%" alt="Gambar Profile SMPN7 Bondowoso">  
 				</div>
 	  
 				<div class="col-lg-6 d-flex flex-column justify-content-center about-content p-5">
