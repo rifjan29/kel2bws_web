@@ -36,6 +36,26 @@ require_once "config/conn.php"?>
                         <?php
                         session_unset();
                     }
+                    if (isset($_SESSION['edit']) && !empty($_SESSION['edit'])) {?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Warning!</strong><?=$_SESSION['edit']?>
+                         </div>
+                        <?php
+                        session_unset();
+                    }
+                    if (isset($_SESSION['hapus']) && !empty($_SESSION['hapus'])) {?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Warning!</strong><?=$_SESSION['hapus']?>
+                         </div>
+                        <?php
+                        session_unset();
+                    }
                 ?>
                 <div class="mt-3">
                 <table class="table">
@@ -63,8 +83,8 @@ require_once "config/conn.php"?>
                         <td><?=$isi['alamat']?></td>
                         <td><?=$isi['nama_golongan']?></td>
                         <td>
-                          <a class="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal2<?=$isi['id_mahasiswa']?>"> Edit</a>  |
-                          <a href="" class="btn btn-danger text-white">Hapus</a>    
+                          <a class="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal2<?=$isi['id_mahasiswa']?>"> <span class="fa fa-edit"></span></a>  |
+                          <a href="control/delete.php?id=<?=$isi['id_mahasiswa']?>" onclick="return confirm('Apakah yakin data akan di hapus?')" class="btn btn-danger text-white"><span class="fa fa-trash"></span></a>    
                         </td>
                         </tr>
                         <div class="modal fade" id="exampleModal2<?=$isi['id_mahasiswa']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
@@ -87,7 +107,7 @@ require_once "config/conn.php"?>
                                         $gagal = ""
                                     ?>
                                     <p><strong>Edit data : </strong><?=$data['nama_mahasiswa']?></p>
-                                    <form method="POST" action="control/add.php">
+                                    <form method="POST" action="control/edit.php">
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Nama Mahasiswa</label>
                                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama" name="nama" value="<?=$data['nama_mahasiswa']?>" required>
@@ -97,14 +117,18 @@ require_once "config/conn.php"?>
                                             <textarea class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Alamat" name="alamat" required><?=$data['alamat']?></textarea>
                                         </div>
                                         <div class="form-group">
+                                        <?php $x = $data['id_golongan'];?>
                                         <label for="formGroupExampleInput2">Golongan</label>
                                         <select class="custom-select" name="golongan" required>
-                                            <option value="<?=$data['id_golongan']?>" <?=($data['id_golongan'] == "1")? $berhasil : '' ;?>>TIF</option>
-                                            <option value="<?=$data['id_golongan']?>" <?=($data['id_golongan'] == "2")? $berhasil : '';?>>TKK</option>
-                                            <option value="3" >MIF</option>
-                                            <option value="4">Internasional</option>
+                                            <option value="1" <?php echo($x == '1') ? "selected" : ''?>>TIF</option>
+                                            <option value="2"  <?php echo($x == '2') ? "selected" : ''?>>TKK</option>
+                                            <option value="3"  <?php echo($x == '3') ? "selected" : ''?>>MIF</option>
+                                            <option value="4" <?php echo($x == '4') ? "selected" : ''?>>Internasional</option>
                                         </select>
-                                        </div>    
+                                        </div>   
+                                        <div class="form-group">
+                                            <input type="text" name="id" value="<?=$data['id_golongan'];?>">
+                                        </div> 
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

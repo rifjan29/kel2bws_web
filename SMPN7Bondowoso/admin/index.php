@@ -18,7 +18,7 @@
       $galeri = mysqli_query($db, "SELECT * FROM gallery WHERE galeri_kategori = 'kegiatan'");
       $data_galeri = mysqli_num_rows($galeri);
       $sapras = mysqli_query($db, "SELECT * FROM gallery WHERE galeri_kategori = 'sapras'");
-      $data_sapras = mysqli_num_rows($galeri);
+      $data_sapras = mysqli_num_rows($sapras);
       $news = mysqli_query($db, "SELECT * FROM news");
       $data_news = mysqli_num_rows($news);
       $emp = mysqli_query($db, "SELECT * FROM employees");

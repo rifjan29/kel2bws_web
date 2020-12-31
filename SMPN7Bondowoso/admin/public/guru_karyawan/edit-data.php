@@ -57,9 +57,10 @@
                   <div class="form-group ">
                     <label for="category_emp" class="control-label col-lg-2">Kategori <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
+                      <? $x = $d['category_emp']; ?>
                       <select class="form-control" name="keterangan">
-                        <option value="guru"  <?php if($d['category_emp']=="guru"){echo "selected";} ?>>Guru</option>
-                        <option value="karyawan"  <?php if($d['category_emp']=="karyawan"){echo "selected";} ?>>Karyawan</option>   
+                        <option value="guru"<?php echo( $x == "guru") ? "selected" : "" ?>>Guru</option>
+                        <option value="karyawan"<?php echo( $x == "karyawan") ? "selected" : "" ?> ?>>Karyawan</option>   
                       </select>
                     </div>
                   </div>

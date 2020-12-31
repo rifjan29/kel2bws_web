@@ -124,8 +124,8 @@
                 <tbody>
                   <tr class="">
                     <td>
-                      <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="<?=$_ENV['base_url']?>img_uploaded/guru_karyawan/<?php echo $emp['picture_emp']; ?>" alt="" />
+                      <div class="img-thumbnail">
+                        <img src="<?=$_ENV['base_url']?>img_uploaded/guru_karyawan/<?php echo $emp['picture_emp']; ?>" alt="Gambar Guru & Karyawan"  class="img-responsive" width="150px" height="100px" />
                       </div>
                     </td>
                     <td><?=$emp['name_emp']; ?></td>

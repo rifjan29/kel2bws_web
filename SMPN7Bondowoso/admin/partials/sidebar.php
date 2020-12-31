@@ -48,7 +48,7 @@
           </li>
           <li class="sub-menu">
             <a href="<?=$_ENV['base_url']?>public/pictures/" <?=($title == "gambar")? $aktif : $mati;?>>
-              <i class="fa fa-list-alt"></i>
+              <i class="fa fa-picture-o"></i>
               <span>Galeri Sekolah</span>
             </a>
           </li>

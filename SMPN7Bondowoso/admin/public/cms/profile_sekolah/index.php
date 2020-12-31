@@ -45,7 +45,6 @@
                     <th>Logo</th>
                     <th>Makna Logo</th>
                     <th class="hidden-phone">Visi</th>
-                    <th class="hidden-phone">Misi</th>
                     <th>Alamat</th>
                     <th rowspan="2">Aksi</th>
                   </tr>
@@ -67,9 +66,8 @@
                     
                     </td>
                     <td class="hidden-phone"><?=$profile['profile_title']; ?></td>
-                    <td class="hidden-phone"><?=$profile['profile_visi']; ?></td>
-                    <td class="center hidden-phone"><?php echo $profile['profile_misi']; ?></td>
-                    <td class="center hidden-phone"><?=$profile['profile_address']?></td>
+                    <td class="hidden-phone"><?=substr(strip_tags($profile['profile_visi']),0,50)."...";?></td>
+                    <td class="center hidden-phone"><?=substr($profile['profile_address'],0,20)?></td>
                     <td>
                       <a type="button" class="btn btn-warning" href="edit-data.php?id=<?=$profile['id']; ?>"><i class="fa fa-edit"></i></a> |
                       <a type="button" class="btn btn-danger" href="../../../controller/profile_sekolah/drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>

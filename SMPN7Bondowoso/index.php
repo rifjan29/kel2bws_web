@@ -32,25 +32,25 @@
 </div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	    	<a class="navbar-brand" href="index.html"><img src="images/logo-sekolah.svg" alt="" srcset=""></a>
+	    	<a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo" srcset=""></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Beranda</a></li>
+	        	<li class="nav-item active"><a href="<?=$_ENV['front_url']?>" class="nav-link">Beranda</a></li>
 	        	<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Profil
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="profile-sekolah.html">Tentang Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah">Tentang Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Profil Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah">Profil Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Makna Logo</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#logo-sekolah">Makna Logo</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Visi & Misi</a>	 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#visi-sekolah">Visi & Misi</a>	 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -166,21 +166,29 @@
               	<span>Guru & Karyawan</span>
               </div>
             </div>
-          </div>
+		  </div>
+		  	<?php 
+				$news = mysqli_query($db, "SELECT * FROM news");
+				$hitung_news = mysqli_num_rows($news);
+			?>
           <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 text-center">
               <div class="text">
-                <strong class="number" data-number="8500">0</strong>
+                <strong class="number" data-number="<?=$hitung_news?>">10</strong>
               </div>
               <div class="text">
-              	<span>Prestasi</span>
+              	<span>Berita & Prestasi</span>
               </div>
             </div>
-          </div>
+		  </div>
+		 	<?php 
+				$galeri = mysqli_query($db, "SELECT * FROM gallery WHERE galeri_kategori = 'sapras'");
+				$hitung_galeri = mysqli_num_rows($galeri);
+			?>
           <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 text-center">
               <div class="text">
-                <strong class="number" data-number="378">0</strong>
+                <strong class="number" data-number="<?=$hitung_galeri?>">0</strong>
               </div>
               <div class="text">
               	<span>Sarana Prasarana</span>
@@ -265,45 +273,31 @@
           </div>
         </div>
         <div class="row d-flex">
+		 <?php 
+			 $berita = mysqli_query($db, "SELECT * FROM `news` WHERE `news_category` = 'berita'");
+			 while ($data_berita = mysqli_fetch_assoc($berita)) {?>
+			<?php 
+				$tgl = $data_berita['news_date'];
+				$tgl_berita = date("d-m-Y",strtotime($tgl));
+				
+				$uid =$data_berita['aid'];
+				$admin = mysqli_query($db,"SELECT * FROM `db_smpn7bws`.`admin` WHERE `id` = '$uid'");
+				$data_admin = mysqli_fetch_array($admin);
+			?>
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$data_berita['news_picture']?>');">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">January 30, 2020</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-user"></span> Admin</a></div>
+                  <div><a href="#"></a> <?=$tgl_berita; ?></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-user"></span><?=$data_admin['name_admin']?></a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                <h3 class="heading"><a href="#"><?=substr($data_berita['news_tittle'],0,100)."..."?></a></h3>
               </div>
             </div>
 		  </div>
-		  <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3">
-              	<div class="meta mb-2">
-                  <div><a href="#">January 30, 2020</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-user"></span> Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-		  </div>
-		  <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3">
-              	<div class="meta mb-2">
-                  <div><a href="#">January 30, 2020</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-user"></span> Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-		  </div>
+		  <?php } ?>
 		  <div class="col-lg-12 d-flex justify-content-end">
 			<div class="p-2"><a href="#" class="btn btn-primary d-block">Selengkapnya</a></div>
 		  </div>

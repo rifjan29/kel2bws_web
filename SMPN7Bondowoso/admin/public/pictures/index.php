@@ -62,8 +62,8 @@
                     while ($data = mysqli_fetch_assoc($sql)) {?>
                   <tr class="">
                     <td class="hidden-phone">
-                      <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="<?=$_ENV['base_url']?>img_uploaded/galeri/<?=$data['gallery_picture']?>"  alt="Tidak Ada Gambar" />
+                      <div class="thumbnail">
+                        <img src="<?=$_ENV['base_url']?>img_uploaded/galeri/<?=$data['gallery_picture']?>"  alt="Tidak Ada Gambar"  class="img-responsive" width="150px" height="100px"/>
                       </div>
                     </td>
                     <td><?=$data['gallery_title']?></td>

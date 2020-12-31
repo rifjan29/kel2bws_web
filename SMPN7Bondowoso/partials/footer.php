@@ -14,8 +14,8 @@
 						<div class="col-md-4 mb-md-0 mb-4">
 								<h2 class="footer-heading">Tentang Sekolah</h2>
 								<ul class="list-unstyled">
-									<li><a href="#" class="py-1 d-block">Sejarah</a></li>
-									<li><a href="#" class="py-1 d-block">Visi & Misi</a></li>
+									<li><a href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah" class="py-1 d-block">Sejarah</a></li>
+									<li><a href="<?=$_ENV['front_url']?>profile-sekolah.php#visi-sekolah" class="py-1 d-block">Visi & Misi</a></li>
 								</ul>
 						</div>
 						<div class="col-md-4 mb-md-0 mb-4">
