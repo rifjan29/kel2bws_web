@@ -68,9 +68,9 @@
 						Galeri
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="#">Kegiatan Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php/#galeri-sekolah">Kegiatan Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Sarana Prasarana</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php/#galeri-sekolah">Sarana Prasarana</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">

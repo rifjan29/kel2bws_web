@@ -38,7 +38,7 @@
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	    	<a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo"></a>
+        <a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo" srcset=""  class="img-fluid" ></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
@@ -74,9 +74,9 @@
 						Galeri
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="#">Kegiatan Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php/#galeri-sekolah">Kegiatan Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Sarana Prasarana</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php/#galeri-sekolah">Sarana Prasarana</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -101,7 +101,7 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-end">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Beranda</a></span><i class="fa fa-caret-right mr-1" aria-hidden="true"></i> <span>Guru dan Karyawan</span></p>
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="<?=$_ENV['front_url']?>">Beranda</a></span><i class="fa fa-caret-right mr-1" aria-hidden="true"></i> <span>Guru dan Karyawan</span></p>
               <h1 class="mb-0 bread">Guru dan Karyawan</h1>
             </div>
           </div>

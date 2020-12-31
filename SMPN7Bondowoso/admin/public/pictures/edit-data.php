@@ -41,9 +41,9 @@
                     $data = mysqli_fetch_array($sql);
                 ?>
                 <form class="cmxform form-horizontal style-form" id="commentForm" method="post" enctype="multipart/form-data" action="<?=$_ENV['base_url']?>controller/galeri/edit-kegiatan.php">
-                  <input  name="id"  value="<?=$id_admin;?>" />
-                  <input  name="gambar_lama"  value="<?=$data['gallery_picture'];?>"/>
-                  <input  name="id_galeri"  value="<?=$data['id'];?>"/>
+                  <input hidden name="id"  value="<?=$id_admin;?>" />
+                  <input hidden name="gambar_lama"  value="<?=$data['gallery_picture'];?>"/>
+                  <input hidden name="id_galeri"  value="<?=$data['id'];?>"/>
                   <div class="form-group ">
                     <label for="title" class="control-label col-lg-2">Judul Galeri <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
