@@ -7,6 +7,8 @@
  	$profile = mysqli_query($db, "SELECT * FROM profile");
   $data_profile = mysqli_fetch_array($profile);
  
+  $pimpinan = mysqli_query($db, "SELECT * FROM headmaster ORDER BY id DESC LIMIT 1");
+  $data_pimpinan = mysqli_fetch_array($pimpinan);
 ?>
 
 <div class="wrap">
@@ -59,9 +61,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="#">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#data-guru">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#data-karyawan">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -127,24 +129,24 @@
                     <h2>KEPALA SEKOLAH</h2>    
                     <div class="">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>
+                            <div class="img align-self-stretch" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/cms/profile_pimpinan/<?=$data_pimpinan['picture_hm']?>);"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
-                                <h3>Bu Susi Susanti</h3>
+                                <h3><?=$data_pimpinan['name_hm']?></h3>
                                 <!-- <span class="position mb-2">MATEMATIKA</span> -->
                             <div class="faded">
                                 <table >
                                     <tr>
                                         <th>Tanggal Lahir</th>
-                                        <td>Indonesia</td>
+                                        <td><?=$data_pimpinan['name_hm']?></td>
                                     </tr>
                                     <tr>
                                         <th>Pendidikan Terakhir</th>
-                                        <td>4 September 1359</td>
+                                        <td><?=$data_pimpinan['educate_hm']?></td>
                                     </tr>
                                     <tr>
                                         <th>Pengalaman Kerja</th>
-                                        <td>56, 67 km<sup>2</sup></td>
+                                        <td><?=$data_pimpinan['experience']?></td>
                                     </tr>
                                     </table>
                             </div>

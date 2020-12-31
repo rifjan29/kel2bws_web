@@ -58,9 +58,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="#">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#data-guru">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#data-karyawan">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
