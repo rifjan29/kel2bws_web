@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <?php include "admin/config/conn.php"?>
 <?php include "partials/header.php"?>
 <?php 
@@ -61,9 +64,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="#data-guru">Data Guru</a>
+					  <a class="dropdown-item" href="#dataSMPN7">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#data-karyawan">Data Karyawan</a> 
+					  <a class="dropdown-item" href="#dataSMPN7">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -132,79 +135,63 @@
       </section>
           
   
-<section class="ftco-section bg-light" id="data-guru">
+<section class="ftco-section bg-light" id="dataSMPN7">
     <div class="container">
             <div class="row justify-content-center pb-3 mb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <h2>Data Guru SMPN 7 Bondowoso</h2>
+                    <h2>Data SMPN 7 Bondowoso</h2>
                      <span class="subheading">Guru &amp; Karyawan</span>
                 </div>
             </div>
+            <label for="sel1">Kata Kunci:</label>
+                      <?php
+                      $kata_cari="";
+                      if (isset($_POST['kata_cari'])) {
+                          $kata_cari=$_POST['kata_cari'];
+                          echo $kata_cari;
+                        }
+                      ?>
             <div class="row">
                 <div class="col-lg-9 col-md-6">
-                    <form action="#" class="search-form">
+                    <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" class="search-form">
+      
                         <div class="form-group">
                           <span class="fa fa-search"></span>
-                          <input type="text" class="form-control" id="search" placeholder="Pencarian Guru Ketikkan Nama/Mapel">
+                          <input type="text" name="kata_cari" value="<?php echo $kata_cari;?>" class="form-control" id="search" placeholder="Pencarian Guru atau karyawan Ketikkan Nama/Mapel">
                         </div>
-                    </form>
+                      </div>
+                    
+                <div class="col-lg-3 col-md-6 pl-0">
+                    <div class="form-group ">
+                        <input type="submit"  value="Pilih" name="Cari" class="btn btn-primary d-block p-3">
+                    </div>
                 </div>
+                  </form>
             </div>
-          <div id="tampil">
-            <?php
-              $guru = mysqli_query($db, "SELECT * FROM employees WHERE category_emp = 'guru'");
-              while ($row = mysqli_fetch_object($guru)) {?>
-                  <div class="row">
+            <div class="row">
+                  <?php
+                    if (isset($_POST['kata_cari'])) {
+                      $kata_cari=trim($_POST['kata_cari']);   
+                      $data = mysqli_query($db,"SELECT * FROM employees WHERE name_emp like '%".$kata_cari."%' OR position_emp like '%".$kata_cari."%'");
+                    }else{
+                      $data = mysqli_query($db, "SELECT * FROM employees");
+                    }
+                    while ($row = mysqli_fetch_array($data)) {?>
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/guru_karyawan/<?=$row->picture_emp?>);"></div>
+                                <div class="img align-self-stretch" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/guru_karyawan/<?=$row['picture_emp']?>);"></div>
                             </div>
                                 <div class="text pt-3 px-3 pb-4 text-center">
-                                    <h3><?=$row->name_emp?></h3>
-                                    <span class="position mb-2"><?=$row->position_emp?></span>
+                                    <h3><?=$row['name_emp']?></h3>
+                                    <span class="position mb-2"><?=$row['position_emp']?></span>
                                     <div class="faded"></div>
                                 </div>
                         </div>
                     </div>
-                  </div>
-              <?php }?>
-          </div> 
+                    <?php }?>
+            </div>
     </div>
 </section>
-  
-<section class="ftco-section bg-light" id="data-karyawan">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <h2>Data Karyawan SMPN 7 Bondowoso</h2>
-                <span class="subheading">Guru &amp; Karyawan</span>
-            </div>
-        </div>
-        <div class="row">
-                <div class="col-lg-9 col-md-6">
-                    <form action="#" class="search-form">
-                        <div class="form-group">
-                          <span class="fa fa-search"></span>
-                          <input type="text" class="form-control" placeholder="Pencarian Karyawan Ketikkan Nama/Pekerjaan">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 ftco-animate">
-              <div class="staff">
-                  <div class="img-wrap d-flex align-items-stretch">
-                      <div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>
-                  </div>
-                      <div class="text pt-3 px-3 pb-4 text-center">
-                          <h3>Bu Susi Susanti</h3>
-                          <span class="position mb-2">MATEMATIKA</span>
-                          <div class="faded"></div>
-                      </div>
-              </div>
-          </div>
-      </div>
-    </div>
-</section>
+
 <?php require_once "partials/footer.php"?>

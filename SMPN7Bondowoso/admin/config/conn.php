@@ -8,8 +8,10 @@
     $db_user = "root";
     $db_pass = "";
     $db = mysqli_connect($db_host, $db_user, $db_pass,$db_name);
-    if (!$db) {
-        die("Gagal Terhubung dengan Database : ").mysqli_connect_error();
+    if (mysqli_ping($db)) {
+      
+    }else { 
+        printf ("Error: %s\n", mysqli_error($conn)); 
     }
     // end connect database
 

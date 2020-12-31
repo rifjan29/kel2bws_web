@@ -32,7 +32,7 @@
 </div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	    	<a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo" srcset=""></a>
+	    	<a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo" srcset=""  class="img-fluid" ></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
@@ -58,9 +58,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#data-guru">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#dataSMPN7">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#data-karyawan">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#dataSMPN7">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -286,7 +286,7 @@
 			?>
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$data_berita['news_picture']?>');">
+              <a href="blog-single.html" class="block-20 rounded lozad" style="background-image: url('<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$data_berita['news_picture']?>');">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
