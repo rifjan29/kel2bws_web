@@ -3,7 +3,10 @@
 <?php
 	$sql = mysqli_query($db,"SELECT * FROM contact");
 	$data = mysqli_fetch_array($sql);
-
+	$id = $_GET['berita'];
+	$detail_berita =  mysqli_query($db, "SELECT * FROM `news` WHERE `slug` = '$id'");
+	$x = mysqli_fetch_array($detail_berita);
+	$infomasi_lainnya = mysqli_query($db,"SELECT * FROM `news` ORDER BY `news`.`id` DESC LIMIT 3");
 
 ?>
 <div class="wrap">
@@ -28,21 +31,21 @@
 		</div>
 	</div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
-	<div class="container">
-	<a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo" srcset=""  class="img-fluid" ></a>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="<?=$_ENV['front_url']?>"><img src="<?=$_ENV['base_url']?>img_uploaded/logo_header.svg" alt="gambar logo" srcset=""  class="img-fluid" ></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
-	    <div class="collapse navbar-collapse" id="ftco-nav">
+	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item "><a href="<?=$_ENV['front_url']?>" class="nav-link">Beranda</a></li>
+	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>" class="nav-link">Beranda</a></li>
 	        	<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle"  id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Profil
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah" >Tentang Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah">Tentang Sekolah</a>
 					  <div class="dropdown-divider"></div>
 					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah">Profil Sekolah</a>
 					  <div class="dropdown-divider"></div>
@@ -56,12 +59,12 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#dataSMPN7">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php#dataSMPN7">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php/#dataSMPN7">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php#dataSMPN7">Data Karyawan</a> 
 					</div>
 				  </li>
-				  <li class="nav-item dropdown active">
+				  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Galeri
 					</a>
@@ -71,7 +74,7 @@
 					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php#galeri-sekolah">Sarana Prasarana</a> 
 					</div>
 				  </li>
-				  <li class="nav-item dropdown">
+				  <li class="nav-item dropdown active">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Informasi
 					</a>
@@ -81,84 +84,64 @@
 					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi.php#berita-sekolah">Prestasi Siswa</a> 
 					</div>
 				  </li>
-	        	<li class="nav-item "><a href="<?=$_ENV['front_url']?>kontak.php" class="nav-link">Kontak</a></li>
+	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>kontak.php" class="nav-link">Kontak</a></li>
 	     
 	        </ul>
+	      </div>
 	    </div>
-	</div>
 </nav>
-<!-- END nav -->
+    <!-- END nav -->
 <section class="hero-wrap hero-wrap-2" style="background-color: #031C0A;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-end">
             <div class="col-md-9 ftco-animate pb-5">
                 <p class="breadcrumbs mb-2"><span class="mr-2"><a href="<?=$_ENV['front_url']?>">Beranda</a></span><i class="fa fa-caret-right mr-1" aria-hidden="true"></i> <span>Informasi</span></p>
-              <h1 class="mb-0 bread">Kegiatan Sekolah & Sarana Prasarana SMPN 7 Bondowoso</h1>
+              <h1 class="mb-0 bread">Berita & Prestasi SMPN 7 Bondowoso</h1>
             </div>
         </div>
     </div>
 </section> 
-<section class="ftco-section" id="galeri-sekolah">
-    <div class="container">
+		
+		<section class="ftco-section ftco-degree-bg">
+      <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 d-flex justify-content-md-center p-4">
-                <button class="btn btn-primary filter-button mr-2" data-filter="all">Semua</button>
-                <button class="btn btn-primary filter-button mr-2" data-filter="kegiatan">Kegiatan Sekolah</button>
-                <button class="btn btn-primary filter-button mr-2" data-filter="sapras">Sarana Prasarana</button>
+          <div class="col-lg-8 ftco-animate">
+          	<p>
+              <img src="<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$x['news_picture']?>" alt="gambar berita"  class="img-fluid">
+            </p>
+            <h2 class="mb-3"><?=$x['news_tittle'] ?></h2>
+			<div>
+			<?=$x['news_content']?>
+			</div>
+          </div> <!-- .col-md-8 -->
+          <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
+
+            <div class="sidebar-box ftco-animate">
+			  <h3>Informasi Lainnya</h3>
+			  <?php 
+				while ($y = mysqli_fetch_array($infomasi_lainnya)) {
+					$tgl = $y['news_date'];
+					$tgl_berita = date("d-m-Y",strtotime($tgl));
+					$uid =$y['aid'];
+					$admin = mysqli_query($db,"SELECT * FROM `db_smpn7bws`.`admin` WHERE `id` = '$uid'");
+					$data_admin = mysqli_fetch_array($admin);	
+			?>		  		  
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" href="<?=$_ENV['front_url']?>detail-informasi.php/?berita=<?=$y['slug']?>" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$y['news_picture']?>);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="<?=$_ENV['front_url']?>detail-informasi.php/?berita=<?=$y['slug']?>"><?=substr($y['news_tittle'],0,100)?></a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span><?=$tgl_berita?></a></div>
+                    <div><a href=""><span class="icon-person"></span><?=$data_admin['name_admin']?></a></div>
+                  </div>
+                </div>
+			  </div>
+			<?php } ?>
             </div>
+          </div>
+
         </div>
-        <div class="row">
-			<?php 
-				$kegiatan = mysqli_query($db,"SELECT * FROM gallery WHERE galeri_kategori = 'kegiatan'");
-				while ($data = mysqli_fetch_assoc($kegiatan)) {?>	
-				<?php 		
-					$uid =$data['aid'];
-					$admin = mysqli_query($db,"SELECT * FROM `db_smpn7bws`.`admin` WHERE `id` = '$uid'");
-					$data_admin = mysqli_fetch_array($admin);
-				?>
-				<div class="gallery_product ftco-animate col-lg-6 col-md-6 col-sm-6 col-xs-6 filter kegiatan">
-						<div class="blog-entry ">
-						<a href="blog-single.html" class="block-20 rounded lozad" style="background-image: url('<?=$_ENV['base_url']?>img_uploaded/galeri/<?=$data['gallery_picture']?>');">
-						</a>
-						<div class="text mt-3">
-							<div class="meta mb-2">
-							<div><a href="#"><?=$data['gallery_date']?></a></div>
-							<div><a href="#" class="meta-chat"><span class="fa fa-user pr-1"></span><?=$data_admin['name_admin']?></a></div>
-							</div>
-							<h3 class="heading"><strong><?=$data['gallery_title']?></strong></h3>
-							<p><?=$data['gallery_info']?></p>
-						</div>
-						</div>
-				</div>
-				<?php } ?>
-				
-
-			<?php 
-				$sapras = mysqli_query($db,"SELECT * FROM gallery WHERE galeri_kategori = 'sapras'");
-				while ($data = mysqli_fetch_assoc($sapras)) {?>	
-				<?php 		
-					$uid =$data['aid'];
-					$admin = mysqli_query($db,"SELECT * FROM `db_smpn7bws`.`admin` WHERE `id` = '$uid'");
-					$data_admin = mysqli_fetch_array($admin);
-				?>
-				<div class="gallery_product ftco-animate col-lg-6 col-md-6 col-sm-6 col-xs-6 filter sapras">
-						<div class="blog-entry ">
-						<a href="blog-single.html" class="block-20 rounded lozad" style="background-image: url('<?=$_ENV['base_url']?>img_uploaded/galeri/<?=$data['gallery_picture']?>');">
-						</a>
-						<div class="text mt-3">
-							<div class="meta mb-2">
-							<div><a href="#"><?=$data['gallery_date']?></a></div>
-							<div><a href="#" class="meta-chat"><span class="fa fa-user pr-1"></span><?=$data_admin['name_admin']?></a></div>
-							</div>
-							<h3 class="heading"><strong><?=$data['gallery_title']?></strong></h3>
-							<p><?=$data['gallery_info']?></p>
-						</div>
-						</div>
-				</div>
-			<?php } ?>				
-    </div>    
-</section>
-
-
+      </div>
+    </section> <!-- .section -->
 <?php include "partials/footer.php"?>

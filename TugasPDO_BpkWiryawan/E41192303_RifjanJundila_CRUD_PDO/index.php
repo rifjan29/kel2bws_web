@@ -127,7 +127,7 @@ require_once "config/conn.php"?>
                                         </select>
                                         </div>   
                                         <div class="form-group">
-                                            <input type="text" name="id" value="<?=$data['id_golongan'];?>">
+                                            <input type="text" name="id_gol" value="<?=$data['id_golongan'];?>">
                                         </div> 
                                 </div>
                                 <div class="modal-footer">

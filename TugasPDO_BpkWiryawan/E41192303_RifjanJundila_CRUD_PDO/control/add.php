@@ -6,6 +6,7 @@ if (!empty($_POST['nama'])) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
     $golongan = $_POST['golongan'];
+    var_dump($nama);
 
     $data[] = $nama;
     $data[] = $alamat;

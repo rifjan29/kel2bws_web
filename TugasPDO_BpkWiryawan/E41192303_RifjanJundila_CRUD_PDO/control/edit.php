@@ -24,6 +24,7 @@
         header("Location:../index.php");
         $_SESSION['edit'] = "Data berhasil diganti !";
         exit();
+       
 		
     }
 ?>

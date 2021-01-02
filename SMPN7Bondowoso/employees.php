@@ -74,9 +74,9 @@
 						Galeri
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php/#galeri-sekolah">Kegiatan Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php#galeri-sekolah">Kegiatan Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php/#galeri-sekolah">Sarana Prasarana</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php#galeri-sekolah">Sarana Prasarana</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -84,12 +84,12 @@
 						Informasi
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="#">Berita Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi.php#berita-sekolah">Berita Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">Prestasi Siswa</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi.php#berita-sekolah">Prestasi Siswa</a> 
 					</div>
 				  </li>
-	        	<li class="nav-item"><a href="services.html" class="nav-link">Kontak</a></li>
+	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>kontak.php" class="nav-link">Kontak</a></li>
 	     
 	        </ul>
 	      </div>
