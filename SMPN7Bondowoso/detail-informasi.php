@@ -45,13 +45,13 @@
 					Profil
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah">Tentang Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah#tentang-sekolah">Tentang Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah">Profil Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah#tentang-sekolah">Profil Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#logo-sekolah">Makna Logo</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah#logo-sekolah">Makna Logo</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah.php#visi-sekolah">Visi & Misi</a>	 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>profile-sekolah#visi-sekolah">Visi & Misi</a>	 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -59,9 +59,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php#dataSMPN7">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees#dataSMPN7">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees.php#dataSMPN7">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees#dataSMPN7">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -69,9 +69,9 @@
 						Galeri
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php#galeri-sekolah">Kegiatan Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah#galeri-sekolah">Kegiatan Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah.php#galeri-sekolah">Sarana Prasarana</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>galeri-sekolah#galeri-sekolah">Sarana Prasarana</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown active">
@@ -79,12 +79,12 @@
 						Informasi
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi.php#berita-sekolah">Berita Sekolah</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi#berita-sekolah">Berita Sekolah</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi.php#berita-sekolah">Prestasi Siswa</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi#berita-sekolah">Prestasi Siswa</a> 
 					</div>
 				  </li>
-	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>kontak.php" class="nav-link">Kontak</a></li>
+	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>kontak" class="nav-link">Kontak</a></li>
 	     
 	        </ul>
 	      </div>
@@ -128,9 +128,9 @@
 					$data_admin = mysqli_fetch_array($admin);	
 			?>		  		  
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" href="<?=$_ENV['front_url']?>detail-informasi.php/?berita=<?=$y['slug']?>" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$y['news_picture']?>);"></a>
+                <a class="blog-img mr-4" href="<?=$_ENV['front_url']?>detail-informasi/?berita=<?=$y['slug']?>" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$y['news_picture']?>);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="<?=$_ENV['front_url']?>detail-informasi.php/?berita=<?=$y['slug']?>"><?=substr($y['news_tittle'],0,100)?></a></h3>
+                  <h3 class="heading"><a href="<?=$_ENV['front_url']?>detail-informasi/?berita=<?=$y['slug']?>"><?=substr($y['news_tittle'],0,100)?></a></h3>
                   <div class="meta">
                     <div><a href="#"><span class="icon-calendar"></span><?=$tgl_berita?></a></div>
                     <div><a href=""><span class="icon-person"></span><?=$data_admin['name_admin']?></a></div>
@@ -144,4 +144,4 @@
         </div>
       </div>
     </section> <!-- .section -->
-<?php include "partials/footer.php"?>
+<?php include "partials/footer"?>

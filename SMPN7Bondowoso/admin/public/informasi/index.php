@@ -71,7 +71,7 @@
                     </td>
                     <td class=""><?=$data['news_category']?></td>
                     <td>
-                      <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/informasi/edit-data.php?id=<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/informasi/edit-data?id=<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
                       <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?=$no?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <a type="button" class="btn btn-primary" href="<?=$_ENV['base_url']?>controller/informasi/hapus-informasi.php?act=deletedata&id=<?php echo $data['id']; ?>">Save changes</a>
+                          <a type="button" class="btn btn-primary" href="<?=$_ENV['base_url']?>controller/informasi/hapus-informasi?act=deletedata&id=<?php echo $data['id']; ?>">Save changes</a>
                         </div>
                       </div>
                     </div>

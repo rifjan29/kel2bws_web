@@ -10,7 +10,7 @@
   <?php include "../../../partials/topbar.php"?> 
   <?php $title = "cms";?>
   <?php include "../../../partials/sidebar.php"?>
-  <?php include "../../../partials/edit_profile.php"?>
+  <?php include "../../../partials/edit_profile"?>
 <section id="main-content">
   <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i> CMS (Control Management System)</h3>
@@ -34,7 +34,7 @@
     <div class="row mt">
       <div class="col-lg-12">
         <div class="form-panel" style="padding-bottom: 50px;">
-            <a type="button" href="add-cms.php" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Banner</a>
+            <a type="button" href="add-cms" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Banner</a>
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
@@ -60,8 +60,8 @@
                     </td>
                     <td class="center hidden-phone"><?=substr($row['page_url'],0,20)."..."?></td>
                     <td>
-                      <a type="submit" class="btn btn-warning" href="edit-cms.php?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="delete-cms.php?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="submit" class="btn btn-warning" href="edit-cms?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger" href="delete-cms?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
                     <?php } ?>

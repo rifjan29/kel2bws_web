@@ -19,11 +19,11 @@
         $_SESSION['user'] = $data['username'];
         $_SESSION['psw'] = $data['password'];
 
-       header("Location:../index.php");
+       header("Location:../index");
     }else{
         session_start();
         $_SESSION['failed_message'] = "Password dan Username Terdapat Kesalahan!";
-        header('Location:../login.php');
+        header('Location:../login');
         exit();
         die ("Query gagal dijalankan ".mysqli_errno($db));
     }
