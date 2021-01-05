@@ -85,7 +85,7 @@
 					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi#berita-sekolah">Prestasi Siswa</a> 
 					</div>
 				  </li>
-	        	<li class="nav-item active"><a href="<?=$_ENV['front_url']?>kontak" class="nav-link">Kontak</a></li>
+	        	<li class="nav-item active"><a href="<?=$_ENV['front_url']?>contact#kontak-sekolah" class="nav-link">Kontak</a></li>
 	     
 	        </ul>
 	      </div>

@@ -3,8 +3,13 @@
 
     $title = stripslashes(strip_tags(htmlspecialchars($_POST['judul_informasi'] ,ENT_QUOTES)));
     $content = $_POST['isi_informasi'];
-    // membuat slug url 
-    $slug = str_replace(" ", "-", $title);
+   // membuat slug url \
+   $slug = trim($title);
+   $slug = preg_replace("/[^a-zA-Z0-9\-\s]+/", "", $slug);
+   $slug = strtolower(trim($slug));
+   $slug = str_replace(" ", "-", $slug);
+   $slug = $text_ori = preg_replace('/\-{2,}/', '-', $slug);
+   // selesai
     // selesai
     $kategori = $_POST['kategori_informasi'];
 

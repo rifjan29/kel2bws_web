@@ -55,9 +55,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees/#dataSMPN7">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees/#dataSMPN7">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -80,7 +80,7 @@
 					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi#berita-sekolah">Prestasi Siswa</a> 
 					</div>
 				  </li>
-	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>kontak" class="nav-link">Kontak</a></li>
+	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>contact#kontak-sekolah" class="nav-link">Kontak</a></li>
 	     
 	        </ul>
 	      </div>
@@ -125,22 +125,25 @@
               <?php 
                 $tgl = $d['news_date'];
                 $tgl_berita = date("d-m-Y",strtotime($tgl));
-                
+                $slug = $d['slug'];
                 $uid =$d['aid'];
                 $admin = mysqli_query($db,"SELECT * FROM `db_smpn7bws`.`admin` WHERE `id` = '$uid'");
                 $data_admin = mysqli_fetch_array($admin);
               ?>
               <div class="col-md-6 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                      <a href="<?=$_ENV['front_url']?>detail-informasi/?berita=<?=$d['slug']?>">
+                      <a href="<?=$_ENV['front_url']?>detail-informasi/<?=$d['slug']?>">
                         <img class="block-20 rounded lozad img-fluid " src="<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$d['news_picture']?>" alt="">
                       </a>
                       <div class="text mt-3">
                         <div class="meta mb-2">
-                          <div><a href="#"></a> <?=$tgl_berita?>></div>
+                          <div><a href="#"></a> <?=$tgl_berita?></div>
                           <div><a href="#" class="meta-chat"><span class="fa fa-user"></span><?=$data_admin['name_admin']?></a></div>
                         </div>
-                        <h3 class="heading"><a href="<?=$_ENV['front_url']?>detail-informasi/?berita=<?=$d['slug']?>"><?=substr($d['news_tittle'],0,100)."..."?></a></h3>
+                        <h3 class="heading">
+                        <a href="<?=$_ENV['front_url']?>detail-informasi/<?=$slug?>">
+                        <?=substr($d['news_tittle'],0,100)."..."?></a>
+                        </h3>
                       </div>
                     </div>
               </div>

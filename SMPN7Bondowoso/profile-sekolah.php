@@ -61,9 +61,9 @@
 					Guru & Karyawan
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees#dataSMPN7">Data Guru</a>
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees">Data Guru</a>
 					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees#dataSMPN7">Data Karyawan</a> 
+					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>employees">Data Karyawan</a> 
 					</div>
 				  </li>
 				  <li class="nav-item dropdown">
@@ -86,7 +86,7 @@
 					  <a class="dropdown-item" href="<?=$_ENV['front_url']?>informasi#berita-sekolah">Prestasi Siswa</a> 
 					</div>
 				  </li>
-	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>kontak" class="nav-link">Kontak</a></li>
+	        	<li class="nav-item"><a href="<?=$_ENV['front_url']?>contact#kontak-sekolah" class="nav-link">Kontak</a></li>
 	     
 	        </ul>
 	    </div>
