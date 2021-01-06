@@ -72,9 +72,9 @@
                 <input type="text" hidden name="id" value="<?=$d['id']?>">
                 <input type="text" hidden name="gambar_lama" value="<?=$d['picture_hm']?>">
                   <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-8">
-                      <button class="btn btn-theme" type="submit" name="save">Save</button>
-                      <a class="btn btn-theme04" type="button" href="index.php">Cancel</a>
+                    <div class="col-lg-offset-4 col-lg-8">
+                      <button class="btn btn-theme" type="submit" name="save">Simpan</button>
+                      <a class="btn btn-theme04" type="button" href="<?=$_ENV['base_url']?>public/cms/profile_pimpinan/">Batal</a>
                     </div>
                   </div>
                 </form>

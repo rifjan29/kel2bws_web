@@ -4,7 +4,8 @@
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a><br>
+          <strong>&copy; SMPN 7 Bondowoso  &copy;</strong>
         </div>
         <a href="" class="go-top">
           <i class="fa fa-angle-up"></i>

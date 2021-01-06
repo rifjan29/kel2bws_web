@@ -10,7 +10,7 @@
   <?php include "../../../partials/topbar.php"?> 
   <?php $title = "cms";?>
   <?php include "../../../partials/sidebar.php"?>
-  <?php include "../../../partials/edit_profile"?>
+  <?php include "../../../partials/edit_profile.php"?>
 <section id="main-content">
   <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i> CMS (Control Management System)</h3>
@@ -31,6 +31,7 @@
 
           }
         ?>
+        
     <div class="row mt">
       <div class="col-lg-12">
         <div class="form-panel" style="padding-bottom: 50px;">
@@ -52,7 +53,7 @@
                   ?>
                   <tr class="">
                     <td><?=$row['page_title']?></td>
-                    <td><?=$row['page_content']?></td>
+                    <td><?=substr($row['page_content'],0,30)."..."?></td>
                     <td class="hidden-phone">
                       <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                         <img src="<?=$_ENV['base_url']?>img_uploaded/cms/landing_page/<?=$row['page_slider']?>" alt="gambar salah" />
@@ -60,7 +61,7 @@
                     </td>
                     <td class="center hidden-phone"><?=substr($row['page_url'],0,20)."..."?></td>
                     <td>
-                      <a type="submit" class="btn btn-warning" href="edit-cms?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-edit"></i></a> |
+                      <a type="submit" class="btn btn-warning" href="edit-cms/<?php echo $row['id_page'];?>"><i class="fa fa-edit"></i></a> |
                       <a type="button" class="btn btn-danger" href="delete-cms?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>

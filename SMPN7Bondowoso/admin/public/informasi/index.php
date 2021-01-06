@@ -16,27 +16,27 @@
       <section class="wrapper site-min-height" style="margin-top: 50px !important;">
         <h3><i class="fa fa-angle-right"></i>DATA INFORMASI</h3>
         <p>digunakan untuk memanipulasi data pada halaman Informasi (Berita & Prestasi)</p>
-        <?php if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+        <?php 
+        if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
             <div class="alert alert-success"><b>Well done!</b> <?=$_SESSION['success_message']; ?>.</div>
           <?php
-            unset($_SESSION['success_message']);
+            unset($_SESSION['pesan_berhasil']);
           }else{
-         
+
           }
           if (isset($_SESSION['hapus']) && !empty($_SESSION['hapus'])) { ?>
              <div class="alert alert-danger"><b>Peringatan!</b> <?=$_SESSION['hapus']; ?>.</div
           <?php
-            unset($_SESSION['hapus']);
+            unset($_SESSION['pesan_hapus']);
           }else{
-         
-          }
-        ?>
-        </div>
+
+          }?>
+          
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
-            <a type="button" href="add-data.php" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Informasi</a>
-            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <a type="button" href="add-data" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Informasi</a>
+            <table cellpadding="0" cellspacing="0" border="0"  class="display table table-bordered" id="hidden-table-info"  >
                 <thead>
                   <tr>
                     <th>No</th>
@@ -44,7 +44,7 @@
                     <th>Judul Informasi</th>
                     <th>Isi Informasi</th>
                     <th class="hidden-phone">Kategori</th>
-                    <th rowspan="2">Aksi</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,13 +65,13 @@
                         <img style="" class="img-responsive" width="150px" height="100px" src="<?=$_ENV['base_url']?>img_uploaded/informasi/<?php echo $data['news_picture']?>" alt="" />
                       </div>
                     </td>
-                    <td><?=$data['news_tittle']?></td>
+                    <td><?=substr($data['news_tittle'],0,30)."..."?></td>
                     <td class="">
-                       <?php echo substr(strip_tags($data['news_content']),0,20) . "..."; ?>
+                       <?=substr(strip_tags($data['news_content']),0,20) . "..."; ?>
                     </td>
                     <td class=""><?=$data['news_category']?></td>
                     <td>
-                      <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/informasi/edit-data?id=<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/informasi/edit-data/<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
                       <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?=$no?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
@@ -86,8 +86,8 @@
                               Apakah anda yakin ingin menghapus Infomasi Judul : <strong> <?=$data['news_tittle']?></strong>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <a type="button" class="btn btn-primary" href="<?=$_ENV['base_url']?>controller/informasi/hapus-informasi?act=deletedata&id=<?php echo $data['id']; ?>">Save changes</a>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                          <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/informasi/hapus-informasi?act=deletedata&id=<?php echo $data['id']; ?>">Hapus</a>
                         </div>
                       </div>
                     </div>

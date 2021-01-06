@@ -132,8 +132,8 @@
                     <td class="hidden-phone"><?=$emp['category_emp']; ?></td>
                     <td class="center hidden-phone"><?=$emp['position_emp']; ?></td>
                     <td>
-                      <a type="button" class="btn btn-warning"href="edit-data.php?id=<?=$emp['id']; ?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="../../controller/guru_karyawan/drop_act.php?id=<?php echo $emp['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-warning"href="edit-data/<?=$emp['id']; ?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/guru_karyawan/drop_act.php?id=<?php echo $emp['id']; ?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
                   <?php } ?>

@@ -12,8 +12,7 @@
                             <div class="form-group ">
                                 <label for="title" class="control-label col-lg-4">Password Lama</label>
                                 <div class="col-lg-8">
-                                  <input class=" form-control" id="password_lama" name="password_lama" type="password"  />
-                                  <input type="checkbox" onclick="myFunction()"> Lihat Password
+                                  <input class=" form-control" id="password_lama" name="password_lama" type="password"/>
                                 </div>
                             </div> 
                             <div class="form-group ">
@@ -28,7 +27,7 @@
                         <div class="modal-footer">
                          <div class="form-group"> 
                           <button type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-default">Batal</button>
-                          <button type="submit" id="simpan_profile" class="btn btn-primary">Simpan</button>
+                          <button type="submit" id="simpan_profile" class="btn btn-theme">Simpan</button>
                         </div>
                         </div>
                     </form>

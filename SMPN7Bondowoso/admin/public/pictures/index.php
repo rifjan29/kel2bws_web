@@ -42,10 +42,11 @@
           }else{
           }
         ?>
+        
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
-            <a type="button" href="add-data.php" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Galeri</a>
+            <a type="button" href="add-data" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Galeri</a>
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
@@ -53,7 +54,7 @@
                     <th>Judul Galeri</th>
                     <th class="hidden-phone">Keterangan</th>
                     <th class="hidden-phone">Kategori</th>
-                    <th rowspan="2">Aksi</th>
+                    <th >Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -74,7 +75,7 @@
                       echo "Sarana Prasarana";
                     }?></td>
                     <td>
-                      <a type="button" class="btn btn-warning" href="edit-data.php?id_galeri=<?=$data['id'];?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-warning" href="edit-data/<?=$data['id'];?>"><i class="fa fa-edit"></i></a> |
                       <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/galeri/hapus-kegiatan.php?id_hapus=<?=$data['id'];?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>

@@ -45,7 +45,7 @@
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <button class="btn btn-theme" type="submit" name="save">Simpan</button>
-                      <a class="btn btn-theme04" type="reset" href="index.php">Batal</a>
+                      <a class="btn btn-theme04" type="reset" href="<?=$_ENV['base_url']?>public/cms/contact/">Batal</a>
                     </div>
                   </div>
                 </form>

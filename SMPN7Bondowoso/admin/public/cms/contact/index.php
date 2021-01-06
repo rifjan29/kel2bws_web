@@ -66,7 +66,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="reset" value="Reset" type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-default" >Batal</button>
-                      <button type="submit" class="btn btn-primary">Simpan</button>
+                      <button type="submit" class="btn btn-theme">Simpan</button>
                     </div>
                     </form>
                         <!-- END FORM GURU DAN KARYAWAN -->   
@@ -86,12 +86,13 @@
                     <?php 
                         $query = mysqli_query($db, "SELECT * FROM contact");
                         while ($kontak = mysqli_fetch_array($query)) {
+                          $id = $kontak['id'];
                         ?>
                         <tr>
                           <td><?= $kontak['email'] ?></td>
                           <td><?= $kontak['contact'] ?></td>
                           <td>
-                        <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/cms/contact/edit-kontak.php?id=<?php echo $kontak['id'];?>"><i class="fa fa-edit"></i></a> |
+                        <a type="button" class="btn btn-warning" href="<?=$_ENV['base_url']?>public/cms/contact/edit-kontak/<?=$id?>"><i class="fa fa-edit"></i></a> |
                         <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/contact/aksi-hapus-kontak.php?id=<?php echo $kontak['id']; ?>"><i class="fa fa-trash-o"></i></a>
                           </td>
                         </tr>

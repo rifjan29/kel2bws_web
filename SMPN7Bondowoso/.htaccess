@@ -5,4 +5,26 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 Rewriterule ^detail-informasi/([a-zA-Z0-9_-]+) ./detail-informasi?berita=$1
+
+#EditKontak
+Rewriterule ^admin/public/cms/contact/edit-kontak/([a-zA-Z0-9_-]+) ./admin/public/cms/contact/edit-kontak.php?id=$1
+
+#EditHalamanUtama
+Rewriterule ^admin/public/cms/home/edit-cms/([a-zA-Z0-9_-]+) ./admin/public/cms/home/edit-cms.php?id_page=$1
+
+#EditProfilPimpinan
+Rewriterule ^admin/public/cms/profile_pimpinan/edit-data/([a-zA-Z0-9_-]+) ./admin/public/cms/profile_pimpinan/edit-data.php?id_pimpinan=$1
+
+#EditProfilSekolah
+Rewriterule ^admin/public/cms/profile_sekolah/edit-data/([a-zA-Z0-9_-]+) ./admin/public/cms/profile_sekolah/edit-data.php?id=$1
+
+#EditKaryawanGuru
+Rewriterule ^admin/public/guru_karyawan/edit-data/([a-zA-Z0-9_-]+) ./admin/public/guru_karyawan/edit-data.php?id=$1
+
+#EditInformasi
+Rewriterule ^admin/public/informasi/edit-data/([a-zA-Z0-9_-]+) ./admin/public/informasi/edit-data.php?id=$1
+
+#EditGaleriSekolah
+Rewriterule ^admin/public/pictures/edit-data/([a-zA-Z0-9_-]+) ./admin/public/pictures/edit-data.php?id_galeri=$1
+
 </IfModule>

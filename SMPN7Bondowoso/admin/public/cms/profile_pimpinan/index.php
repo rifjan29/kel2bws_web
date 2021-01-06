@@ -95,7 +95,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="reset" value="reset" type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-default" >Batal</button>
-                      <button type="submit" class="btn btn-primary">Simpan</button>
+                      <button type="submit" class="btn btn-theme">Simpan</button>
                     </div>
                     </form>
                         <!-- END FORM GURU DAN KARYAWAN -->   
@@ -130,7 +130,7 @@
                     <td class="center hidden-phone"><?=$data['experience']?></td>
                     <td class="center hidden-phone"><?=$data['date_hm']?></td>
                     <td>
-                      <a type="button" class="btn btn-warning" href="edit-data.php?id_pimpinan=<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-warning" href="edit-data/<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
                       <a type="button" class="btn btn-danger" href="delete-data.php?id_hapus=<?=$data['id']?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>

@@ -88,8 +88,8 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit" name="save">Save</button>
-                      <button class="btn btn-theme04" type="reset" value="reset" >Cancel</button>
+                      <button class="btn btn-theme" type="submit" name="save">Simpan</button>
+                      <a class="btn btn-theme04" type="reset" value="reset" href="<?=$_ENV['base_url']?>public/cms/profile_sekolah" >Batal</a>
                     </div>
                   </div>
                 </form>

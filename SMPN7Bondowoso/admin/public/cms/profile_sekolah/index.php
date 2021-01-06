@@ -37,7 +37,7 @@
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
-            <a type="button" href="add-data.php" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Profile</a>
+            <a type="button" href="add-data" class="btn btn-theme" style="margin-bottom: 10px;"><i class="fa fa-plus"></i>Tambah Profile</a>
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
@@ -69,8 +69,8 @@
                     <td class="hidden-phone"><?=substr(strip_tags($profile['profile_visi']),0,50)."...";?></td>
                     <td class="center hidden-phone"><?=substr($profile['profile_address'],0,20)?></td>
                     <td>
-                      <a type="button" class="btn btn-warning" href="edit-data.php?id=<?=$profile['id']; ?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="../../../controller/profile_sekolah/drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-warning" href="edit-data/<?=$profile['id']; ?>"><i class="fa fa-edit"></i></a> |
+                      <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/profile_sekolah/drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
 

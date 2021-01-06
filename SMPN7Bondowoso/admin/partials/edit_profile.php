@@ -42,7 +42,7 @@
                         <div class="modal-footer">
                          <div class="form-group"> 
                           <button type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-default">Batal</button>
-                          <button type="submit" id="simpan_profile" class="btn btn-primary">Simpan</button>
+                          <button type="submit" id="simpan_profile" class="btn btn-theme">Simpan</button>
                         </div>
                         </div>
                     </form>
