@@ -20,29 +20,21 @@
             <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['edit_message']; ?>.</div>
           <?php
             unset($_SESSION['edit_message']);
-          }else{
-
           }
           if (isset($_SESSION['pesan_berhasil']) && !empty($_SESSION['pesan_berhasil'])) { ?>
             <div class="alert alert-success"><b>Well done!</b> <?=$_SESSION['pesan_berhasil']; ?>.</div>
           <?php
             unset($_SESSION['pesan_berhasil']);
-          }else{
-
           }
           if (isset($_SESSION['gagal_edit']) && !empty($_SESSION['gagal_edit'])) { ?>
             <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['gagal_edit']; ?>.</div>
           <?php
             unset($_SESSION['gagal_edit']);
-          }else{
-
           }
           if (isset($_SESSION['kategori']) && !empty($_SESSION['kategori'])) { ?>
             <div class="alert alert-warning"><b>Well done!</b> <?=$_SESSION['kategori']; ?>.</div>
           <?php
             unset($_SESSION['kategori']);
-          }else{
-
           }
         ?>
         <div class="row mt">
@@ -97,7 +89,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="reset" data-dismiss="modal" aria-hidden="true"class="btn btn-default">Batal</button>
-                      <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                      <button type="submit" name="submit" class="btn btn-theme">Simpan</button>
                     </div>
                     </form>
                         <!-- END FORM GURU DAN KARYAWAN -->   
@@ -112,14 +104,14 @@
                     <th>Nama Lengkap</th>
                     <th class="hidden-phone">Kategori</th>
                     <th class="hidden-phone">Pekerjaan</th>
-                    <th rowspan="2">Aksi</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <?php
                   include '../../config/conn.php';
                   $query_mysql = mysqli_query($db, "SELECT * FROM employees");
-                  $list = 1;
                   while ($emp = mysqli_fetch_array($query_mysql)){
+                  $id = $emp['id'];
                 ?>
                 <tbody>
                   <tr class="">
@@ -133,9 +125,26 @@
                     <td class="center hidden-phone"><?=$emp['position_emp']; ?></td>
                     <td>
                       <a type="button" class="btn btn-warning"href="edit-data/<?=$emp['id']; ?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/guru_karyawan/drop_act.php?id=<?php echo $emp['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#tenaga<?=$id?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
+                    <div class="modal fade" id="tenaga<?=$id?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              <h4 class="modal-title" id="myModalLabel1">Konfirmasi Hapus Data Guru & Karyawan</h4>
+                          </div>
+                          <div class="modal-body">
+                              Apakah anda yakin ingin menghapus data <strong>?</strong>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                            <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/guru_karyawan/drop_act.php?id=<?php echo $emp['id']; ?>">Hapus</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                  
                   <?php } ?>
                 </tbody>
               </table>
@@ -146,5 +155,5 @@
       <!-- /wrapper -->
     </section> 
 
-  <?=include "../../partials/footer2.php"?>
+  <?php include "../../partials/footer2.php"?>
 </body>     

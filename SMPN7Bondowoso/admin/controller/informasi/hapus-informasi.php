@@ -12,12 +12,12 @@
             $sql = mysqli_query($db, "DELETE FROM news WHERE id = '$id_new'");
             unlink("../../img_uploaded/informasi/$data_image");
             session_start();
-            $_SESSION['success_message'] = "Data Berhasil Dihapus !";
+            $_SESSION['hapus'] = "Data Berhasil Dihapus !";
             header('Location: ../../public/informasi/');
             exit();  
         }else{
             session_start();
-            $_SESSION['hapus'] = "Data Gagal Terhapus !";
+            $_SESSION['kesalahan'] = "Data Gagal Terhapus !";
             header('Location: ../../public/informasi/');
             exit();
             die ("Query gagal dijalankan ".mysqli_errno($db));

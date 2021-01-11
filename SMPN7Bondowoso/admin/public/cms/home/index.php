@@ -50,6 +50,7 @@
                   <?php 
                     $result = mysqli_query($db, "SELECT * FROM landing_page");
                     while ($row = mysqli_fetch_array($result)) {
+                      $id = $row['id_page'];
                   ?>
                   <tr class="">
                     <td><?=$row['page_title']?></td>
@@ -62,9 +63,26 @@
                     <td class="center hidden-phone"><?=substr($row['page_url'],0,20)."..."?></td>
                     <td>
                       <a type="submit" class="btn btn-warning" href="edit-cms/<?php echo $row['id_page'];?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="delete-cms?id_page=<?php echo $row['id_page'];?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?=$id?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
+                        <div class="modal fade" id="myModal<?=$id?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel1">Konfirmasi Hapus Data Halaman Utama</h4>
+                              </div>
+                              <div class="modal-body">
+                                    Apakah anda yakin ingin menghapus data <strong>?</strong>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                <a type="button" class="btn btn-danger" href="delete-cms?id_page=<?=$id?>">Hapus</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>                     
                     <?php } ?>
                 </tbody>
             </table>
@@ -75,6 +93,6 @@
   <!-- /wrapper -->
 </section> 
 
-  <?=include "../../../partials/footer2.php"?>
+  <?php include "../../../partials/footer2.php"?>
 </body>
 </html>

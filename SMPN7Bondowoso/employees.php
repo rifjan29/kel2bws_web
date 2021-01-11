@@ -4,9 +4,12 @@
 <?php include "admin/config/conn.php"?>
 <?php include "partials/header.php"?>
 <?php 
-	$sql = mysqli_query($db,"SELECT * FROM contact");
+	$sql = mysqli_query($db,"SELECT * FROM `contact` ORDER BY id DESC LIMIT 1");
   $data = mysqli_fetch_array($sql);
   
+  $profile = mysqli_query($db, "SELECT * FROM profile");
+	$data_profile = mysqli_fetch_array($profile);
+
   $count = mysqli_query($db, "SELECT * FROM employees WHERE category_emp = 'guru'");
   $hitung = mysqli_num_rows($count);
   
@@ -96,7 +99,7 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-color: #031C0A;" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image:url('img/pengajar.svg')"" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-end">

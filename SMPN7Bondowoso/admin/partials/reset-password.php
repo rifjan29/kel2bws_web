@@ -35,3 +35,20 @@
 
                 </div>
             </div>
+            <div class="modal fade" id="keluar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel1">Konfirmasi Keluar Administrator</h4>
+                  </div>
+                  <div class="modal-body">
+                    Apakah anda yakin untuk keluar <strong>?</strong>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/exit.php">Iya</a>
+                  </div>
+                </div>
+              </div>
+            </div> 

@@ -118,6 +118,7 @@
                   <?php 
                     $sql = mysqli_query($db, "SELECT * FROM headmaster");
                     while ($data = mysqli_fetch_assoc($sql)) {
+                    $id = $data['id']; 
                   ?> 
                   <tr class="">
                     <td> 
@@ -131,9 +132,26 @@
                     <td class="center hidden-phone"><?=$data['date_hm']?></td>
                     <td>
                       <a type="button" class="btn btn-warning" href="edit-data/<?=$data['id']?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="delete-data.php?id_hapus=<?=$data['id']?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?=$id?>"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
+                  <div class="modal fade" id="myModal<?=$id?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel1">Konfirmasi Hapus Data Profile Pimpinan</h4>
+                        </div>
+                        <div class="modal-body">
+                             Apakah anda yakin ingin menghapus data <strong>?</strong>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                          <a type="button" class="btn btn-danger" href="delete-data.php?id_hapus=<?=$data['id']?>">Hapus</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>        
                   <?php }?>
                 </tbody>
               </table>
@@ -144,6 +162,6 @@
       <!-- /wrapper -->
     </section> 
 
-  <?=include "../../../partials/footer2.php"?>
+  <?php include "../../../partials/footer2.php"?>
 </body>
 </html>

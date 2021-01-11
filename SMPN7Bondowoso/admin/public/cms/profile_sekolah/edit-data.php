@@ -40,7 +40,7 @@
           ?>
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
-                <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="POST" action="../../../controller/profile_sekolah/edit_act.php">
+                <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="POST" action="<?=$_ENV['base_url']?>controller/profile_sekolah/edit_act.php">
                   <div class="form-group ">
                     <label for="title" class="control-label col-lg-2">Arti Logo <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">

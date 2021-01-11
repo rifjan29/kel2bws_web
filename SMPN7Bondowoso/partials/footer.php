@@ -4,7 +4,7 @@
 					<div class="col-md-9 py-5">
 						<div class="row">
 							<div class="col-md-4 mb-md-0 mb-4">
-								<h2 class="footer-heading">Social Media</h2>
+								<h2 class="footer-heading">Media Sosial</h2>
 								<ul class="ftco-footer-social p-0">
 									<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
 									<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
@@ -14,15 +14,15 @@
 						<div class="col-md-4 mb-md-0 mb-4">
 								<h2 class="footer-heading">Tentang Sekolah</h2>
 								<ul class="list-unstyled">
-									<li><a href="<?=$_ENV['front_url']?>profile-sekolah.php#tentang-sekolah" class="py-1 d-block">Sejarah</a></li>
-									<li><a href="<?=$_ENV['front_url']?>profile-sekolah.php#visi-sekolah" class="py-1 d-block">Visi & Misi</a></li>
+									<li><a href="<?=$_ENV['front_url']?>profile-sekolah#tentang-sekolah" class="py-1 d-block">Sejarah</a></li>
+									<li><a href="<?=$_ENV['front_url']?>profile-sekolah#visi-sekolah" class="py-1 d-block">Visi & Misi</a></li>
 								</ul>
 						</div>
 						<div class="col-md-4 mb-md-0 mb-4">
 							<h2 class="footer-heading">Informasi Terkini</h2>
 							<ul class="list-unstyled">
-								<li><a href="#" class="py-1 d-block">Berita</a></li>
-								<li><a href="#" class="py-1 d-block">Prestasi</a></li>
+								<li><a href="<?=$_ENV['front_url']?>informasi" class="py-1 d-block">Berita</a></li>
+								<li><a href="<?=$_ENV['front_url']?>informasi" class="py-1 d-block">Prestasi</a></li>
 							</ul>
 						</div>
 										
@@ -38,11 +38,8 @@
 						</div>
 					</div>
 					<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
-						<h2 class="footer-heading">Kink Tautan</h2>
-						<ul class="list-unstyled">
-							<li><a href="#" class="py-1 d-block">https://hackerthemes.com/bootstrap-cheatsheet/#justify-content-end</a></li>
-							<li><a href="#" class="py-1 d-block">https://hackerthemes.com/bootstrap-cheatsheet/#justify-content-end</a></li>
-						</ul>
+						
+                        <img src="<?=$_ENV['base_url']?>img_uploaded/cms/profile_sekolah/<?=$data_profile['profile_logo']?>" class="mx-auto d-block img-fluid" height="50%" alt="Gambar Profile SMPN7 Bondowoso">  
 					</div>
 				</div>
 			</div>

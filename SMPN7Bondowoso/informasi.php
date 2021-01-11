@@ -1,8 +1,11 @@
 <?php include "admin/config/conn.php"?>
 <?php include "partials/header.php"?>
 <?php
-	$sql = mysqli_query($db,"SELECT * FROM contact");
-	$data = mysqli_fetch_array($sql);
+	$sql = mysqli_query($db,"SELECT * FROM `contact` ORDER BY id DESC LIMIT 1");
+  $data = mysqli_fetch_array($sql);
+  
+  $profile = mysqli_query($db, "SELECT * FROM profile");
+	$data_profile = mysqli_fetch_array($profile);
 ?>
 
 <div class="wrap">
@@ -87,7 +90,7 @@
 	    </div>
 </nav>
 <!-- END nav -->
-<section class="hero-wrap hero-wrap-2" style="background-color: #031C0A;" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image:url('img/informasi.svg')" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-end">
@@ -198,7 +201,8 @@
                 <?php 
                   $tgl = $x['news_date'];
                   $tgl_berita = date("d-m-Y",strtotime($tgl));
-                  
+                  $slug = $x['slug'];
+
                   $uid =$x['aid'];
                   $admin = mysqli_query($db,"SELECT * FROM `db_smpn7bws`.`admin` WHERE `id` = '$uid'");
                   $data_admin = mysqli_fetch_array($admin)      
@@ -206,7 +210,7 @@
                 <div class="block-21 mb-3 d-flex ftco-animate"">
                   <a class="blog-img mr-2" style="background-image: url(<?=$_ENV['base_url']?>img_uploaded/informasi/<?=$x['news_picture']?>);"></a>
                   <div class="text">
-                    <h3 class="heading" style="margin-bottom: 0 !important;"><a href="#"><?=substr($x['news_tittle'],0,100)."..."?></a></h3>
+                    <h3 class="heading" style="margin-bottom: 0 !important;"><a href="<?=$_ENV['front_url']?>detail-informasi/<?=$slug?>"><?=substr($x['news_tittle'],0,100)."..."?></a></h3>
                     <?=$x['news_content']?>
                     <div class="meta">
                       <div><a href="#"><span class="icon-calendar"></span><?=$tgl_berita?></a></div>

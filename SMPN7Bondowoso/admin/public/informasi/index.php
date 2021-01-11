@@ -20,18 +20,23 @@
         if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
             <div class="alert alert-success"><b>Well done!</b> <?=$_SESSION['success_message']; ?>.</div>
           <?php
-            unset($_SESSION['pesan_berhasil']);
-          }else{
-
+            unset($_SESSION['success_message']);
           }
           if (isset($_SESSION['hapus']) && !empty($_SESSION['hapus'])) { ?>
-             <div class="alert alert-danger"><b>Peringatan!</b> <?=$_SESSION['hapus']; ?>.</div
+             <div class="alert alert-warning"><b>Peringatan!</b> <?=$_SESSION['hapus']; ?>.</div
           <?php
             unset($_SESSION['pesan_hapus']);
-          }else{
-
-          }?>
-          
+          }
+          if (isset($_SESSION['kesalahan']) && !empty($_SESSION['kesalahan'])) { ?>
+            <div class="alert alert-warning"><b>Peringatan!</b> <?=$_SESSION['kesalahan']; ?>.</div
+         <?php
+           unset($_SESSION['kesalahan']);
+         }
+         if (isset($_SESSION['failed_message']) && !empty($_SESSION['failed_message'])) { ?>
+          <div class="alert alert-warning"><b>Peringatan!</b> <?=$_SESSION['failed_message']; ?>.</div
+          <?php
+         unset($_SESSION['failed_message']);
+       }?>          
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel" style="padding-bottom: 50px;">
@@ -80,7 +85,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title" id="myModalLabel1">Konfirmasi Delete Data Informasi</h4>
+                          <h4 class="modal-title" id="myModalLabel1">Konfirmasi Hapus Data Informasi</h4>
                         </div>
                         <div class="modal-body">
                               Apakah anda yakin ingin menghapus Infomasi Judul : <strong> <?=$data['news_tittle']?></strong>
@@ -91,8 +96,7 @@
                         </div>
                       </div>
                     </div>
-                </div>
-
+                  </div>
                   <?php  
                   }
                 ?>
@@ -106,6 +110,6 @@
     </section> 
     <!-- Modal -->
 
-  <?=include "../../partials/footer2.php"?>
+  <?php include "../../partials/footer2.php"?>
 </body>
 </html>

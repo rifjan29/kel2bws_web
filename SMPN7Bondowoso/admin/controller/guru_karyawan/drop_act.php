@@ -13,7 +13,7 @@
         unlink("../../img_uploaded/guru_karyawan/$data_image");
         $sql = mysqli_query($db,"DELETE FROM employees WHERE id='$d'");
         session_start();
-        $_SESSION['success_message'] = "Data Berhasil Dihapus !";
+        $_SESSION['pesan_berhasil'] = "Data Berhasil Dihapus !";
         header('Location:../../public/guru_karyawan/');
         exit();  
     }else{

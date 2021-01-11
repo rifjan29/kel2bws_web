@@ -54,7 +54,7 @@
           <div class="form-panel">
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" enctype="multipart/form-data" action="../../controller/informasi/edit-informasi.php">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" enctype="multipart/form-data" action="<?=$_ENV['base_url']?>controller/informasi/edit-informasi.php">
                   <input  name="id" hidden value="<?=$id_admin;?>" />
                   <div class="form-group">
                         <label for="gambar_banner" class="control-label col-md-2">Foto Thumbnail <strong>(Wajib)</strong></label> 

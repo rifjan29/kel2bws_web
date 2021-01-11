@@ -53,12 +53,12 @@
                 <?php
                   include "../../../config/conn.php";
                   $query_mysql = mysqli_query($db, "SELECT * FROM profile");
-                  $list = 1;
+                  $no = 1;
                   while ($profile = mysqli_fetch_array($query_mysql)){
-                
+                    
                 ?>
                   <tr class="">
-                    <td class="hidden-phone"><?php echo $list++; ?></td>
+                    <td class="hidden-phone"><?php echo $no++; ?></td>
                     <td>
                       <div class="img-thumbnail">
                         <img style="" class="img-responsive" width="150px" height="100px" src="<?=$_ENV['base_url']?>img_uploaded/cms/profile_sekolah/<?php echo $profile['profile_logo']; ?>" alt="" />
@@ -70,10 +70,26 @@
                     <td class="center hidden-phone"><?=substr($profile['profile_address'],0,20)?></td>
                     <td>
                       <a type="button" class="btn btn-warning" href="edit-data/<?=$profile['id']; ?>"><i class="fa fa-edit"></i></a> |
-                      <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/profile_sekolah/drop_act.php?id=<?php echo $profile['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                      <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?=$no?>"><i class="fa fa-trash-o"></i></a>
                     </td>
-                  </tr>
-
+                    </tr>
+                    <div class="modal fade" id="myModal<?=$no?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              <h4 class="modal-title" id="myModalLabel1">Konfirmasi Hapus Data Profile Pimpinan</h4>
+                          </div>
+                          <div class="modal-body">
+                              Apakah anda yakin ingin menghapus data <strong>?</strong>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                            <a type="button" class="btn btn-danger" href="<?=$_ENV['base_url']?>controller/profile_sekolah/drop_act.php?id=<?php echo $profile['id']; ?>">Hapus</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                         
                   <?php } ?>
                 </tbody>
               </table>
@@ -84,6 +100,6 @@
       <!-- /wrapper -->
     </section> 
 
-  <?=include "../../../partials/footer2.php"?>
+  <?php include "../../../partials/footer2.php"?>
 </body>
 </html>

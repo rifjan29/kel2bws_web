@@ -33,7 +33,7 @@
           ?>
               <div class=" form">
                   <!-- form END FORM ADD DATA PROFILE SEKOLAH  -->
-                <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="POST" action="../../controller/guru_karyawan/edit_act.php">
+                <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="POST" action="<?=$_ENV['base_url']?>controller/guru_karyawan/edit_act.php">
                   <div class="form-group ">
                     <label for="name_emp" class="control-label col-lg-2">Nama Lengkap <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
@@ -57,10 +57,10 @@
                   <div class="form-group ">
                     <label for="category_emp" class="control-label col-lg-2">Kategori <strong>(Wajib)</strong></label>
                     <div class="col-lg-10">
-                      <? $x = $d['category_emp']; ?>
+                      <?php $x = $d['category_emp']; ?>
                       <select class="form-control" name="keterangan">
                         <option value="guru"<?php echo( $x == "guru") ? "selected" : "" ?>>Guru</option>
-                        <option value="karyawan"<?php echo( $x == "karyawan") ? "selected" : "" ?> ?>>Karyawan</option>   
+                        <option value="karyawan"<?php echo( $x == "karyawan") ? "selected" : "" ?>>Karyawan</option>   
                       </select>
                     </div>
                   </div>

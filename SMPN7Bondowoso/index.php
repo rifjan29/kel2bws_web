@@ -1,7 +1,7 @@
 <?php include "admin/config/conn.php"?>
 <?php include "partials/header.php"?>
 <?php
-	$sql = mysqli_query($db,"SELECT * FROM contact");
+	$sql = mysqli_query($db,"SELECT * FROM `contact` ORDER BY id DESC LIMIT 1");
 	$data = mysqli_fetch_array($sql);
 
 	$profile = mysqli_query($db, "SELECT * FROM profile");
@@ -104,7 +104,7 @@
 		          	<div class="text w-100 text-center">
 						<h1 class="mb-4"><?=$x['page_title']?></h1>
 						<h2><?=$x['page_content']?></h2>
-			            <p><a href="#" class="btn btn-white">Selengkapnya</a></p>
+			            <p><a href="<?=$x['page_url']?>" target="_blank" class="btn btn-white">Selengkapnya</a></p>
 		            </div>
 		          </div>
 		        </div>
@@ -294,7 +294,7 @@
                   <div><a href="#"></a> <?=$tgl_berita; ?></div>
                   <div><a href="#" class="meta-chat"><span class="fa fa-user"></span><?=$data_admin['name_admin']?></a></div>
                 </div>
-                <h3 class="heading"><a href="<?=$_ENV['front_url']?>detail-informasi/<?=$slug?>>"><?=substr($data_berita['news_tittle'],0,100)."..."?></a></h3>
+                <h3 class="heading"><a href="<?=$_ENV['front_url']?>detail-informasi/<?=$slug?>"><?=substr($data_berita['news_tittle'],0,100)."..."?></a></h3>
               </div>
             </div>
 		  </div>
