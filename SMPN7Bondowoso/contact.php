@@ -123,7 +123,7 @@
                                     	<span class="fa fa-map-marker"></span>
                                 	</div>
 									<div class="text pl-3">
-										<p><span>Addres:</span><?=$data_profile['profile_address']?></p>
+										<p><span>Alamat : </span><?=$data_profile['profile_address']?></p>
 									</div>
 								 </div>
 								 <div class="dbox w-100 d-flex align-items-center">
@@ -131,7 +131,7 @@
 					        			<span class="fa fa-phone"></span>
 					        		</div>
 					        		<div class="text pl-3">
-						            <p><span>Phone:</span> <a href="tel://1234567920"><?=$data['contact']?></a></p>
+						            <p><span>No HP :</span> <a href="tel://1234567920"><?=$data['contact']?></a></p>
 						          </div>
 					          	</div>
 					        	<div class="dbox w-100 d-flex align-items-center">
@@ -139,7 +139,7 @@
 					        			<span class="fa fa-paper-plane"></span>
 					        		</div>
 					        		<div class="text pl-3">
-						            <p><span>Email:</span> <a href="mailto:info@yoursite.com"><?=$data['email']?></a></p>
+						            <p><span>Email :</span> <a href="#"><?=$data['email']?></a></p>
 						          </div>
 					          	</div>
                       			</div>

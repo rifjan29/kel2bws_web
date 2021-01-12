@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?=$_ENV['front_url']?>css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?=$_ENV['front_url']?>css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?=$_ENV['front_url']?>css/magnific-popup.css">
-
+    <link href="<?=$_ENV['front_url']?>admin/img_uploaded/LOGO_SMPN7.png" rel="icon">
     <link rel="stylesheet" href="<?=$_ENV['front_url']?>css/flaticon.css">
     <link rel="stylesheet" href="<?=$_ENV['front_url']?>css/style.css">
 	</head>
